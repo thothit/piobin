@@ -1,0 +1,236 @@
+# Rime schema
+# encoding: utf-8
+# 請做好備份，謹慎修改！
+
+#    “標閩(PioBin)”與“臺羅(TaiLo)”相比有以下一些不同點：
+#    1. 臺羅ts用c表示，相應地tsh也變爲ch。輸入法中依然可以用ts/tsh；
+#    2. 臺羅oo用ou表示，聲調標在o上。輸入法中依然可以用oo；
+#    3. 臺羅ee用ae表示，聲調標在a上。輸入法中依然可以用ee；
+#    4. 臺羅韻化輔音（聲化韻）ng/m用irng和irm表示，聲調標在i上。輸入法中依然可以用ng/m；
+#    5. 聲調的數字式表示與漢語族内其他語言的方案一致，陰奇陽偶，比如1陰平2陽平；
+#    6. 第8調陽入取消臺羅所用的竪綫符，用和陽平一致的揚抑符代替；
+#    7. 第9調建議標本調。需要突出調值不同時，仍允許用臺羅的雙尖音符。輸入法中無對應；
+#    8. 參考越南語，由於詞界模糊難以分別，故以空格代替連字符。字母大小寫規則與英語相同，專有名詞每個音節的首字母都需要大寫，例如美國Bí Kok。標點符號也與英語相同。
+#    另外，輸入法中允許雙寫最後一個元音字符，用長音來表示鼻化，例如iaa,iuu,uaa,auu,uii。但是雙寫ee和oo與臺羅混淆，故不建議使用此表示方法，除非使用者事先聲明“非臺羅”。
+#    聲調標注方法：總是標在第一個非介的字符上。
+
+schema:
+  schema_id: piobin_latin
+  name: Pio Bîn
+  version: "20200913"
+  author:
+    - 作者：共通閩語QQ羣
+  description: |
+    Pio cún Bîn gír（標準閩語羅珍字）
+    (None) → f{陰平/陰入無標符}
+    ˆ(Circumflex) → y{陽平/陽入揚抑符}
+    ´(Acute) → q{陰上尖音符}
+    ˇ(Caron) → v{陽上抑揚符}
+    `(Grave) → x{陰去重音符}
+    ¯(Macron) → w{陽去長音符}
+  dependencies:
+#    - stroke
+#    - terra_pinyin
+#    - piobin_phingim
+
+switches:
+  - name: ascii_mode
+    states: [ Bûn, ASCII ]
+    reset: 0
+  - name: full_shape
+    states: [ Puànn, Cuân ]
+    reset: 0
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+    reset: 1
+#  - name: simplification
+#    states: [ 繁體, 简化 ]
+#    reset: 0
+#  - name: extended_charset
+#    states: [ 通用, 增廣 ]
+#    reset: 0
+
+style:
+  display_tray_icon: true
+#  font_face: Microsoft YaHei
+  font_point: 16
+  fullscreen: false
+  horizontal: false
+  inline_preedit: false
+  candidate_text_size: 20 #候選字號。原為22
+  candidate_view_height: 22 #候選區高度
+  layout: #懸浮窗口設置
+    position: left_up #位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要>=Android5.0)
+    min_length: 1 #最小詞長
+    max_length: 10 #超過字數則換行
+    sticky_lines: 8 #固頂行數
+    max_entries: 8 #最大詞條數
+    border: 1 #邊框寬度。原為2
+    max_width: 300 #最大寬度，超過則自動換行。原為230
+    max_height: 360 #最大高度。原為400
+    margin_x: 2 #水平邊距。原為5
+    margin_y: 2 #豎直邊距。原為5
+    line_spacing_multiplier: 1 #候选詞的行間距(倍數)。原為1.2
+    round_corner: 4 #窗口圓角。原為8
+
+menu:
+#選單每䈎顯示個數。
+  page_size: 8
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher #高度注意！這個matcher必須置於所有自定義affix定義之前，否則後者將無效！我也不知道佛振搞的什麽鳥玩意……
+#    - affix_segmentor@hspnz_lookup
+#    - affix_segmentor@piobin_phingim
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - echo_translator
+    - r10n_translator
+    - script_translator
+    - table_translator
+#    - reverse_lookup_translator
+#    - table_translator@hspnz_lookup #各種反查不出。Still我不曉得佛振搞的什麽飛機……
+#    - table_translator@piobin_phingim
+  filters:
+    - simplifier #繁簡轉換
+    - uniquifier #過濾重複的候選字，會導致常用字被不帶注釋的慣音覆蓋，從而無法顯示音韻注釋。
+#    - reverse_lookup_filter@hspnz_reverse_lookup
+
+#abc_segmentor:
+#    extra_tags:
+
+punctuator:
+  import_preset: symbols
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns: # 注意相互作用，以及"``"是與"`"衝突的鍵位。
+    punct: '^/([0-9]0?|[A-Za-z]+)$' # 按 / 輸入符號
+#    reverse_lookup: "//[a-z]*'?$"
+#    hspnz_lookup: "`/[hspnz]*'?$"
+#    piobin_phingim: "`[A-Za-z]*'?$"
+
+translator:
+  dictionary: piobin_latin
+  spelling_hints: 8 #設定多少字以內候選標註完整帶調拼音〔僅script_translator有效〕
+  enable_completion: true
+  enable_user_dict: false
+  enable_encoder: false #自動組詞
+  enable_sentence: false #自動造句
+  enable_charset_filter: false #是否開啓字符集過濾〔僅table_translator有效。啓用cjk_minifier後可適用於script_translator〕.避免同時使用字符集過濾和extended_charset.
+
+#reverse_lookup:
+#  dictionary: terra_pinyin
+#  tips: 〔普通話拼音反查〕
+#  prefix: "//"
+#  suffix: "'"
+#  enable_completion: true #必須與刪去注釋一起使用，否則處理能力不夠時會導致崩潰。
+#  enable_user_dict: false
+#  enable_encoder: false #自動組詞
+#  enable_sentence: false #自動造句
+#  enable_charset_filter: false #是否開啓字符集過濾〔僅table_translator有效。啓用cjk_minifier後可適用於script_translator〕.避免同時使用字符集過濾和extended_charset.
+#  comment_format:
+#刪去音韻學信息以免因注釋太長而崩潰。（注意：要雙斜杆注釋！）
+#    - "xform/\\{.{1,20}\\}//"
+
+#piobin_phingim:
+#  tag: piobin_phingim
+#  dictionary: piobin_phingim #幸虧正向輸入不像反查那麽坑，還是可以用自定義名稱的。
+#  tips: 〔標閩拼音輸入〕
+#  prefix: "`"
+#  suffix: "'"
+#  enable_completion: true
+#  enable_user_dict: false
+#  enable_encoder: false #自動組詞
+#  enable_sentence: false #自動造句
+#  enable_charset_filter: false #是否開啓字符集過濾〔僅table_translator有效。啓用cjk_minifier後可適用於script_translator〕.避免同時使用字符集過濾和extended_charset.
+#  overwrite_comment: false
+
+#hspnz_lookup:
+#  tag: hspnz_lookup
+#  dictionary: stroke #看起來可以用於反查的輸入方案是佛振欽定的……試驗了stroke、cangjie5和terra_pinyin是可以的，甚至把詞典閹割掉一部分都行，但自定義名稱就不行。嗷，有這麽玩的嗎……
+#  tips: 〔hspnz五筆畫反查〕
+#  prefix: "`/"
+#  suffix: "'"
+#  enable_completion: true #必須與刪去注釋一起使用，否則處理能力不夠時會導致崩潰。
+#  enable_user_dict: false
+#  enable_encoder: false #自動組詞
+#  enable_sentence: false #自動造句
+#  enable_charset_filter: false #是否開啓字符集過濾〔僅table_translator有效。啓用cjk_minifier後可適用於script_translator〕.避免同時使用字符集過濾和extended_charset.
+#  preedit_format:
+#    - xlit/hspnz/一丨丿丶乙/
+ 
+#hspnz_reverse_lookup:
+#  tags: [hspnz_lookup]
+#  dictionary: piobin
+#  overwrite_comment: true
+#  comment_format:
+#刪去音韻學信息以免因注釋太長而崩潰。（注意：要雙斜杆注釋！）
+#    - "xform/\\{.{1,20}\\}//"
+
+#以下拼寫部分修改請務必慎之又慎，很容易因爲格式變更而導致無法部署。我曾花了一天的時間未找出原因，不得不複製另一份方案。
+speller:
+  auto_select: true
+  delimiter: " '"
+  alphabet: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~[/\\]90-;"
+  algebra:
+#只輸入聲母的快速雙拼出詞。
+    - "abbrev/^([ptkbgmlsch]h?).+$/$1/"
+#用廢棄字母轉寫聲調。
+    - "derive/1/f/"
+    - "derive/2/y/"
+    - "derive/3/q/"
+    - "derive/4/v/"
+    - "derive/5/x/"
+    - "derive/6/w/"
+    - "derive/7/f/"
+    - "derive/8/y/"
+#廢棄字母標調方案中的漳系。
+    - "derive/4/w/"
+#顯示音韻學信息的同時無需鍵入聲調。（注意：要雙斜杆注釋！并且需要置於廢棄字母標調之後！）
+    - "derive/^([A-Za-z]+)\\d$/$1/"
+    - "derive/^([A-Za-z]+)(\\d?)(\\{.+\\})$/$1/"
+#美式鍵盤輸入效率最大化，儘量用一個鍵。
+    - "derive/^c/ts/"
+    - "derive/^ts/c/"
+#臺羅用oo表示/ɔ/，現用ou。
+    - "derive/oo/ou/"
+    - "derive/oO/ou/"
+    - "derive/ou/oo/"
+#臺羅用ee表示/ɛ/，現用ae。
+    - "derive/ee/ae/"
+    - "derive/ae/ee/"
+#臺羅聲化韻新表示方法。
+    - "derive/ng/irng/"
+    - "derive/m/irm/"
+    - "derive/irng/ng/"
+    - "derive/irm/m/"
+#泥來。部分地區l讀如d。
+    - "derive/^l/d/"
+    - "derive/^l/r/"
+    - "derive/^n/nd/"
+#日母的其他處理。
+    - "derive/^dz/j/"
+    - "derive/^z/j/"
+    - "derive/^j/dz/"
+    - "derive/^j/z/"
+#允許省略音節尾的鼻化符號。
+    - "derive/^(.+)nn$/$1/"
+#允許省略音節尾的喉塞符號。
+    - "derive/^(.+)h$/$1/"

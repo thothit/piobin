@@ -1,0 +1,408 @@
+# Rime schema
+# encoding: utf-8
+# 請做好備份，謹慎修改！
+
+#    “標閩(PioBin)”與“臺羅(TaiLo)”相比有以下一些不同點：
+#    1. 臺羅ts用c表示，相應地tsh也變爲ch。輸入法中依然可以用ts/tsh；
+#    2. 臺羅oo用ou表示，聲調標在o上。輸入法中依然可以用oo；
+#    3. 臺羅ee用ae表示，聲調標在a上。輸入法中依然可以用ee；
+#    4. 臺羅韻化輔音（聲化韻）ng/m用irng和irm表示，聲調標在i上。輸入法中依然可以用ng/m；
+#    5. 聲調的數字式表示與漢語族内其他語言的方案一致，陰奇陽偶，比如1陰平2陽平；
+#    6. 第8調陽入取消臺羅所用的竪綫符，用和陽平一致的揚抑符代替；
+#    7. 第9調建議標本調。需要突出調值不同時，仍允許用臺羅的雙尖音符。輸入法中無對應；
+#    8. 參考越南語，由於詞界模糊難以分別，故以空格代替連字符。字母大小寫規則與英語相同，專有名詞每個音節的首字母都需要大寫，例如美國Bí Kok。標點符號也與英語相同。
+#    另外，輸入法中允許雙寫最後一個元音字符，用長音來表示鼻化，例如iaa,iuu,uaa,auu,uii。但是雙寫ee和oo與臺羅混淆，故不建議使用此表示方法，除非使用者事先聲明“非臺羅”。
+#    聲調標注方法：總是標在第一個非介的字符上。
+
+schema:
+  schema_id: piobin
+  name: 標準閩語
+  version: "20200913"
+  author:
+    - 作者：共通閩語QQ羣
+  description: |
+    反查功能依賴“地球拼音”和“五筆畫”。
+    羅珍字輸入亦依賴配套詞庫。
+    "`"：閩語羅珍字輸入 
+    "//"：普通話拼音反查
+    "`/"：hspnz五筆畫反查
+    "/`"：（空閑待用）
+  dependencies:
+    - stroke
+    - terra_pinyin
+    - piobin_latin
+
+switches:
+  - name: ascii_mode
+    states: [ 漢字, 西文 ]
+    reset: 0
+  - name: full_shape
+    states: [ 半角, 全角 ]
+    reset: 0
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+    reset: 0
+  - name: simplification
+    states: [ 繁體, 简化 ]
+    reset: 0
+  - name: extended_charset
+    states: [ 通用, 增廣 ]
+    reset: 0
+
+style:
+  display_tray_icon: true
+#  font_face: Microsoft YaHei
+  font_point: 16
+  fullscreen: false
+  horizontal: false
+  inline_preedit: false
+  candidate_text_size: 20 #候選字號。原為22
+  candidate_view_height: 22 #候選區高度
+  layout: #懸浮窗口設置
+    position: left_up #位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要>=Android5.0)
+    min_length: 1 #最小詞長
+    max_length: 10 #超過字數則換行
+    sticky_lines: 8 #固頂行數
+    max_entries: 8 #最大詞條數
+    border: 1 #邊框寬度。原為2
+    max_width: 300 #最大寬度，超過則自動換行。原為230
+    max_height: 360 #最大高度。原為400
+    margin_x: 2 #水平邊距。原為5
+    margin_y: 2 #豎直邊距。原為5
+    line_spacing_multiplier: 1 #候选詞的行間距(倍數)。原為1.2
+    round_corner: 4 #窗口圓角。原為8
+
+menu:
+#選單每䈎顯示個數。
+  page_size: 8
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher #高度注意！這個matcher必須置於所有自定義affix定義之前，否則後者將無效！我也不知道佛振搞的什麽鳥玩意……
+    - affix_segmentor@hspnz_lookup
+    - affix_segmentor@piobin_latin
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - echo_translator
+    - r10n_translator
+    - script_translator
+    - table_translator
+    - reverse_lookup_translator
+    - table_translator@hspnz_lookup #各種反查不出。Still我不曉得佛振搞的什麽飛機……
+    - table_translator@piobin_latin
+  filters:
+    - simplifier #繁簡轉換
+    - uniquifier #過濾重複的候選字，會導致常用字被不帶注釋的慣音覆蓋，從而無法顯示音韻注釋。
+    - reverse_lookup_filter@hspnz_reverse_lookup
+
+#abc_segmentor:
+#    extra_tags:
+
+punctuator:
+  import_preset: symbols
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns: # 注意相互作用，以及"``"是與"`"衝突的鍵位。
+    punct: '^/([0-9]0?|[A-Za-z]+)$' # 按 / 輸入符號
+    reverse_lookup: "//[a-z]*'?$"
+    hspnz_lookup: "`/[hspnz]*'?$"
+    piobin_latin: "`[A-Za-z]*'?$"
+
+translator:
+  dictionary: piobin
+  spelling_hints: 8 #設定多少字以內候選標註完整帶調拼音〔僅script_translator有效〕
+  enable_completion: true
+  enable_user_dict: true
+  enable_encoder: false #自動組詞
+  enable_sentence: false #自動造句
+  enable_charset_filter: false #是否開啓字符集過濾〔僅table_translator有效。啓用cjk_minifier後可適用於script_translator〕.避免同時使用字符集過濾和extended_charset.
+
+reverse_lookup:
+  dictionary: terra_pinyin
+  tips: 〔普通話拼音反查〕
+  prefix: "//"
+  suffix: "'"
+  enable_completion: true #必須與刪去注釋一起使用，否則處理能力不夠時會導致崩潰。
+  enable_user_dict: false
+  enable_encoder: false #自動組詞
+  enable_sentence: false #自動造句
+  enable_charset_filter: false #是否開啓字符集過濾〔僅table_translator有效。啓用cjk_minifier後可適用於script_translator〕.避免同時使用字符集過濾和extended_charset.
+  comment_format:
+#刪去音韻學信息以免因注釋太長而崩潰。（注意：要雙斜杆注釋！）
+    - "xform/\\{.{1,20}\\}//"
+
+piobin_latin:
+  tag: piobin_latin
+  dictionary: piobin_latin #幸虧正向輸入不像反查那麽坑，還是可以用自定義名稱的。
+  tips: 〔標閩羅珍字輸入〕
+  prefix: "`"
+  suffix: "'"
+  enable_completion: true
+  enable_user_dict: false
+  enable_encoder: false #自動組詞
+  enable_sentence: false #自動造句
+  enable_charset_filter: false #是否開啓字符集過濾〔僅table_translator有效。啓用cjk_minifier後可適用於script_translator〕.避免同時使用字符集過濾和extended_charset.
+  overwrite_comment: false
+
+hspnz_lookup:
+  tag: hspnz_lookup
+  dictionary: stroke #看起來可以用於反查的輸入方案是佛振欽定的……試驗了stroke、cangjie5和terra_pinyin是可以的，甚至把詞典閹割掉一部分都行，但自定義名稱就不行。嗷，有這麽玩的嗎……
+  tips: 〔hspnz五筆畫反查〕
+  prefix: "`/"
+  suffix: "'"
+  enable_completion: true #必須與刪去注釋一起使用，否則處理能力不夠時會導致崩潰。
+  enable_user_dict: false
+  enable_encoder: false #自動組詞
+  enable_sentence: false #自動造句
+  enable_charset_filter: false #是否開啓字符集過濾〔僅table_translator有效。啓用cjk_minifier後可適用於script_translator〕.避免同時使用字符集過濾和extended_charset.
+  preedit_format:
+    - xlit/hspnz/一丨丿丶乙/
+ 
+hspnz_reverse_lookup:
+  tags: [hspnz_lookup]
+  dictionary: piobin
+  overwrite_comment: true
+  comment_format:
+#刪去音韻學信息以免因注釋太長而崩潰。（注意：要雙斜杆注釋！）
+    - "xform/\\{.{1,20}\\}//"
+
+#以下拼寫部分修改請務必慎之又慎，很容易因爲格式變更而導致無法部署。我曾花了一天的時間未找出原因，不得不複製另一份方案。
+speller:
+  auto_select: true
+  delimiter: " '"
+  alphabet: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~[/\\]90-;"
+  algebra:
+#只輸入聲母的快速雙拼出詞。
+    - "abbrev/^([ptkbgmlsch]h?).+$/$1/"
+#用廢棄字母轉寫聲調。
+    - "derive/1/f/"
+    - "derive/2/y/"
+    - "derive/3/q/"
+    - "derive/4/v/"
+    - "derive/5/x/"
+    - "derive/6/w/"
+    - "derive/7/f/"
+    - "derive/8/y/"
+#廢棄字母標調方案中的漳系。
+    - "derive/4/w/"
+#顯示音韻學信息的同時無需鍵入聲調。（注意：要雙斜杆注釋！并且需要置於廢棄字母標調之後！）
+    - "derive/^([A-Za-z]+)\\d$/$1/"
+    - "derive/^([A-Za-z]+)(\\d?)(\\{.+\\})$/$1/"
+#美式鍵盤輸入效率最大化，儘量用一個鍵。
+    - "derive/^c/ts/"
+    - "derive/^ts/c/"
+#臺羅用oo表示/ɔ/，現用ou。
+    - "derive/oo/ou/"
+    - "derive/oO/ou/"
+    - "derive/ou/oo/"
+#臺羅用ee表示/ɛ/，現用ae。
+    - "derive/ee/ae/"
+    - "derive/ae/ee/"
+#臺羅聲化韻新表示方法。
+    - "derive/ng/irng/"
+    - "derive/m/irm/"
+    - "derive/irng/ng/"
+    - "derive/irm/m/"
+#雙寫最後一個元音表示鼻化。因此也允許用長音模擬鼻化。這點在鼻輔音后較有用。
+#不規定成雙寫主元音的原因是輸入不習慣，一般是在最後才想起要標鼻化。而eer和iir相對少。
+#當然uee和oo還是沒法用，不過有onn的地方恰好也無低元音oo，而且也沒有多少音。
+    - "derive/ann/aa/"
+#    - "derive/aenn/aee/"
+    - "derive/ainn/aii/"
+    - "derive/aInn/aii/"
+    - "derive/aunn/auu/"
+#    - "derive/enn/ee/"
+    - "derive/einn/eii/"
+    - "derive/ernn/eer/"
+    - "derive/Ernn/eer/"
+    - "derive/inn/ii/"
+    - "derive/Inn/ii/"
+    - "derive/iann/iaa/"
+    - "derive/Iann/iaa/"
+#    - "derive/ionn/ioo/"
+    - "derive/iunn/iuu/"
+    - "derive/irnn/iir/"
+    - "derive/IRnn/iir/"
+    - "derive/oinn/oii/"
+    - "derive/ounn/ouu/"
+#    - "derive/uann/uaa/"#多餘的，對ann已啓用。
+#    - "derive/uainn/uaai/"#多餘的，對ainn已啓用。
+#    - "derive/uenn/uee/"
+#    - "derive/uInn/uii/"#主元音是i，上面已啓用。
+#泥來。部分地區l讀如d。
+    - "derive/^l/d/"
+    - "derive/^l/r/"
+    - "derive/^n/nd/"
+#日母的其他處理。
+    - "derive/^dz/j/"
+    - "derive/^z/j/"
+#z鍵在羅馬字輸入法中用來輸入連字符用，所以下面的注意要注釋掉。
+    - "derive/^j/dz/"
+    - "derive/^j/z/"
+#允許省略音節尾的鼻化符號。
+    - "derive/^(.+)nn$/$1/"
+#允許省略音節尾的喉塞符號。
+    - "derive/^(.+)h$/$1/"
+#允許鼻化和閉音節ou全寫。
+    - "derive/onn/ounn/"
+    - "derive/om/oum/"
+    - "derive/ong/oung/"
+    - "derive/op/oup/"
+    - "derive/ok/ouk/"
+    - "derive/ot/out/"
+    - "derive/oh/ouh/"
+#莆仙的齒齦邊擦音sl/ɬ/，音位和s/s/一樣。
+    - "derive/^s/sl/"
+#閩東。
+#上聲全部視爲陰上3。
+#清齒擦s[θ]，音位s/s/。
+#y→ir，ee[ø]→eo。
+#oe[œ], or[ɒ]
+#u[w], ir[ɥ]。
+    #擬音 杯盃 ue=uoi
+    - "derive/uoi$/ue/"
+    #韻母合併 ui=uoi 杯盃→輝龜
+    - "derive/uoi$/ui/"
+    #韻母合併 iu=ieu 燒嬌→秋周 • [話] iau
+    - "derive/ieu$/iu/"
+    - "derive/ieu$/iau/"
+    - "derive/iau/ieu/"
+    #韻母合併 ua=uai 歪乖→花瓜 • ui=uai 輝龜
+    - "derive/uai$/ua/"
+    - "derive/uai$/ui/"
+    #漳泉亂 舌齒音聲母+香•橋韻→光•過韻
+    - "derive/^([t(th)nlc(ch)])io/$1uo/"
+    # 香姜 yøŋ 古田
+    - "derive/iong$/ireong/"
+    - "derive/iok$/ireok/"
+    # 燈庚 eiŋ 古田 福州
+    - "derive/eng$/eing/"
+    - "derive/ek$/eik/"
+    # 釭綱 ouŋ 古田 福州
+    - "derive/ong$/oung/"
+    - "derive/ok$/ouk/"
+    # 東江 øyŋ 古田 福州
+    - "derive/eong$/eoirng/"
+    - "derive/eok$/eoirk/"
+    # 橋嬝 yø 古田
+    - "derive/io$/ireo/"
+    - "derive/ioh$/ireoh/"
+    # 催 øy 福州
+    - "derive/oi$/eoir/"
+    # 今音 ie=ia=ya 𤬣桸
+    - "derive/ira$/ie/"
+    - "derive/ira$/ia/"
+#莆仙。
+    - "derive/Er/eo/"
+    - "derive/eo/er/"
+#海南。
+#f→ph，v→b
+    #海南的内爆音，音位和各對應聲母一樣。
+    - "derive/^p/bp/"
+    - "derive/^t/dt/"
+    - "derive/^g/gg/"
+    - "derive/^h/hh/"
+    #海南的ht[h]和hk[h]，音位分別和th[tʰ]和kh[kʰ]一樣。不知來源時統一寫ht。
+    - "derive/^th/ht/"
+    - "derive/^kh/ht/"
+    - "derive/^kh/hk/"
+    #海南的ss[s]，音位ch[tsʰ]。 
+    - "derive/^ch/ss/"
+    #海南的tt[t]，音位s[s]或部分[ts]。 
+    - "derive/^s/tt/"
+    - "derive/^c/tt/"
+#以下是對閩南不同地區的單向轉寫。
+#泉。
+    - "derive/uih/ueh/"
+    - "derive/^j/l/"
+    - "derive/Ia/io/"
+    - "derive/ee/e/"
+    - "derive/ae/e/"
+    - "derive/enn/inn/"
+    - "derive/^([mn]g?)ee/$1i/"
+    - "derive/ur/ir/"
+    - "derive/Er/er/"
+    - "derive/ere/ue/"
+    - "derive/ere/er/"
+    - "derive/uIn?n?/ng/"
+    - "derive/uainn/uinn/"
+    - "derive/iO/io/"
+    - "derive/(t?sh?)iO/$1o/"
+    - "derive/aI/ui/"
+    - "derive/aI/ai/"
+    - "derive/^mue/mui/"
+    - "derive/ern(\\d?\\s?)/un$1/"
+    - "derive/ern/irn/"
+    - "derive/IR/ir/"
+    - "derive/oO/oo/"
+    - "derive/oU/oo/"
+    - "derive/oO/ou/"
+    - "derive/oU/ou/"
+    - "derive/ik/iak/\t"
+    - "derive/erm/im/"
+#惠安。
+    - "derive/im/em/"
+    - "derive/iam/em/"
+    - "derive/in/en/"
+    - "derive/ian/en/"
+    - "derive/ip/ep/"
+    - "derive/iap/ep/"
+    - "derive/it/et/"
+    - "derive/iat/et/"
+#廈。
+    - "derive/IR/i/"
+    - "derive/ir/u/"
+    - "derive/ur/u/"
+    - "derive/er(h?)(.)/e$1$2/"
+    - "derive/Er/e/"
+    - "derive/iO/oo/"
+    - "derive/iO/ou/"
+    - "derive/aInn/ing/"
+    - "derive/^ngaI/ging/"
+#漳。
+    - "derive/4/6/"
+    - "derive/Ia/ia/"
+    - "derive/ir/i/"
+    - "derive/er(h?)(.)/ue$1$2/"
+    - "derive/ere/e/"
+    - "derive/uainn/uenn/"
+    - "derive/^(k)uainn([256])/$1uan$2/"
+    - "derive/aInn/an/"
+    - "derive/^ngaI/gan/"
+    - "derive/^mue/bue/"
+    - "derive/iunn/ionn/"
+    - "derive/niu/nio/"
+    - "derive/uee/ua/"
+    - "derive/ern/in/"
+    - "derive/uI/ui/"
+    - "derive/khIR/khir/"
+#漳南。
+    - "derive/ing/eng/"	
+#    - derive/oo/ou/
+#    - "derive/^([ptkblghcjs])?e(\\d)$/$1ei$2/"
+    - "derive/^([^eur]*)e(\\d?)$/$1ei$2/"
+#浙南、潮州和汕頭新派。
+    - "derive/am/ang/"
+    - "derive/ap/ak/"
+    - "derive/em/eng/"
+    - "derive/ep/ek/"
+    - "derive/im/ing/"
+    - "derive/ip/ik/"
+
