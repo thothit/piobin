@@ -206,7 +206,7 @@ speller:
     - "derive/[Aa]e/ee/"
     - "derive/[Ee]e/ae/"
 #臺羅聲化韻新表示方法。
-    - "derive/^([BCGHJKLMNPSTbcghjklmnpst]*)(ng|m)(h?)([1-8fyqvxw])?(\\{.*\\})?$/$1ir$2$3/"
+    - "derive/^([BCGHJKLMNPSTbcghjklmnpst]*)(ng|m)(h?)([1-8fyqvxw])?(\\{.*\\})?$/$1ir$2$3$4/"
     - "derive/([BCGHJKLMNPSTbcghjklmnpst]*)ir(ng|m)(h?)/$1$2$3/"
 #用廢棄字母轉寫聲調。總是位於最上。爲保持錄入詞庫材料時的格式多樣性和自由度，不採用xlit或xform等強制轉換。
 #    - "xlit/12345678/fyqvxwfy/" #轉寫上有問題
