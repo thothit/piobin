@@ -2,7 +2,7 @@
 # encoding: utf-8
 #
 # 閩語時音 專門詞庫集合
-# 全脂拓 <794203834@qq.com>
+# ThokCc <potato008@gmail.com>
 # 神奇海螺
 # 阿托 <a-thok@outlook.com>
 # 騰達 <dieghv@126.com>
@@ -42,7 +42,7 @@
 # * Dictionary of the Foochow Dialect, 3rd Edition, 1929
 ---
 name: piobin
-version: "2020.09.15"
+version: "2022.08.05"
 sort: by_weight
 use_preset_vocabulary: false
 #下面的是本词库包含的所有词库，请根据需要开启/禁用，词条前添删#号即可开启/关闭词库，於重新部署後生效。
