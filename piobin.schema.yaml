@@ -17,7 +17,7 @@
 schema:
   schema_id: piobin
   name: 標準閩語
-  version: "20200913"
+  version: "20220805"
   author:
     - 作者：共通閩語QQ羣
   description: |
@@ -146,7 +146,7 @@ reverse_lookup:
   enable_charset_filter: false #是否開啓字符集過濾〔僅table_translator有效。啓用cjk_minifier後可適用於script_translator〕.避免同時使用字符集過濾和extended_charset.
   comment_format:
 #刪去音韻學信息以免因注釋太長而崩潰。（注意：要雙斜杆注釋！）
-    - "xform/\\{.{1,20}\\}//"
+    - "xform/\\{.*\\}$//"
 
 piobin_latin:
   tag: piobin_latin
@@ -181,7 +181,7 @@ hspnz_reverse_lookup:
   overwrite_comment: true
   comment_format:
 #刪去音韻學信息以免因注釋太長而崩潰。（注意：要雙斜杆注釋！）
-    - "xform/\\{.{1,20}\\}//"
+    - "xform/\\{.*\\}$//"
 
 #以下拼寫部分修改請務必慎之又慎，很容易因爲格式變更而導致無法部署。我曾花了一天的時間未找出原因，不得不複製另一份方案。
 speller:
@@ -189,145 +189,51 @@ speller:
   delimiter: " '"
   alphabet: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~[/\\]90-;"
   algebra:
-#只輸入聲母的快速雙拼出詞。
-    - "abbrev/^([ptkbgmlsch]h?).+$/$1/"
-#用廢棄字母轉寫聲調。
+#以下請盡可能精簡。很遺憾，親測RIME的窮舉預編譯方式會根據轉寫量的多少，極大地影響部署的速度。（可對比build文件夾裏prism文件的體積。）
+#目前實測部署速度：在Windows小狼毫上4min左右，在Android同文上需要20min……
+#順序皆經過精心調整，若更改很可能出現意想不到的問題。調整需謹慎，請提前寫好步驟清晰的debug方案。
+#另外經過實測，並非所有正則表達式語句都獲得支持，例如選擇|、類[]、^$等，因爲這些你在正常使用輸入法時幾乎不會去“鍵入”！務必注意徹底測試。
+#只輸入聲母的快速雙拼出詞。經測試，漢字方案裏pp, gg, gp等組合出不來，不好用。
+#    - "abbrev/^([bcghjklmnpst]h?).+$/$1/"
+#美式鍵盤輸入效率最大化，儘量用一個鍵。
+    - "derive/^c/ts/"
+    - "derive/^ts/c/"
+    - "derive/^C/Ts/"
+    - "derive/^Ts/C/"
+#臺羅用oo表示/ɔ/，現用ou。
+    - "derive/[Oo][oUu]/oo/"
+    - "derive/[Oo][oUu]/ou/"
+#臺羅用ee表示/ɛ/，現用ae。
+    - "derive/[Aa]e/ee/"
+    - "derive/[Ee]e/ae/"
+#臺羅聲化韻新表示方法。
+    - "derive/^([BCGHJKLMNPSTbcghjklmnpst]*)(ng|m)(h?)([1-8fyqvxw])?(\\{.*\\})?$/$1ir$2$3/"
+    - "derive/([BCGHJKLMNPSTbcghjklmnpst]*)ir(ng|m)(h?)/$1$2$3/"
+#用廢棄字母轉寫聲調。總是位於最上。爲保持錄入詞庫材料時的格式多樣性和自由度，不採用xlit或xform等強制轉換。
+#    - "xlit/12345678/fyqvxwfy/" #轉寫上有問題
     - "derive/1/f/"
     - "derive/2/y/"
     - "derive/3/q/"
     - "derive/4/v/"
     - "derive/5/x/"
-    - "derive/6/w/"
+    - "derive/[46]/w/" #漳系。
     - "derive/7/f/"
     - "derive/8/y/"
-#廢棄字母標調方案中的漳系。
-    - "derive/4/w/"
-#顯示音韻學信息的同時無需鍵入聲調。（注意：要雙斜杆注釋！并且需要置於廢棄字母標調之後！）
-    - "derive/^([A-Za-z]+)\\d$/$1/"
-    - "derive/^([A-Za-z]+)(\\d?)(\\{.+\\})$/$1/"
-#美式鍵盤輸入效率最大化，儘量用一個鍵。
-    - "derive/^c/ts/"
-    - "derive/^ts/c/"
-#臺羅用oo表示/ɔ/，現用ou。
-    - "derive/oo/ou/"
-    - "derive/oO/ou/"
-    - "derive/ou/oo/"
-#臺羅用ee表示/ɛ/，現用ae。
-    - "derive/ee/ae/"
-    - "derive/ae/ee/"
-#臺羅聲化韻新表示方法。
-    - "derive/ng/irng/"
-    - "derive/m/irm/"
-    - "derive/irng/ng/"
-    - "derive/irm/m/"
-#雙寫最後一個元音表示鼻化。因此也允許用長音模擬鼻化。這點在鼻輔音后較有用。
-#不規定成雙寫主元音的原因是輸入不習慣，一般是在最後才想起要標鼻化。而eer和iir相對少。
-#當然uee和oo還是沒法用，不過有onn的地方恰好也無低元音oo，而且也沒有多少音。
-    - "derive/ann/aa/"
-#    - "derive/aenn/aee/"
-    - "derive/ainn/aii/"
-    - "derive/aInn/aii/"
-    - "derive/aunn/auu/"
-#    - "derive/enn/ee/"
-    - "derive/einn/eii/"
-    - "derive/ernn/eer/"
-    - "derive/Ernn/eer/"
-    - "derive/inn/ii/"
-    - "derive/Inn/ii/"
-    - "derive/iann/iaa/"
-    - "derive/Iann/iaa/"
-#    - "derive/ionn/ioo/"
-    - "derive/iunn/iuu/"
-    - "derive/irnn/iir/"
-    - "derive/IRnn/iir/"
-    - "derive/oinn/oii/"
-    - "derive/ounn/ouu/"
-#    - "derive/uann/uaa/"#多餘的，對ann已啓用。
-#    - "derive/uainn/uaai/"#多餘的，對ainn已啓用。
-#    - "derive/uenn/uee/"
-#    - "derive/uInn/uii/"#主元音是i，上面已啓用。
+#允許省略音節尾的鼻化或喉塞符號，無需鍵入聲調，但保留顯示音韻學信息。需要置於廢棄字母標調之後。
+#注意：要雙斜杆注釋！（不信可以看部署時Temp文件夾內的error log）
+#目前已實現“鍵入不帶調拼音，檢到帶調詞組”，但是相反方向，“鍵入帶調拼音，檢到不帶調詞組”未能實現。
+    - "derive/^([A-Za-z]+)(nn|h)?([1-8fyqvxw])?(\\{.*\\})?$/$1/"
+#鍵入聲調時，位置可以在元音旁，也可以在音節末尾。本語句需要位於刪去聲調語句和臺羅聲化韻ng/m改寫之後。
+    - "derive/^([BCGHJKLMNPSTbcghjklmnpst]*)([Ii][Rr]?|[Uu]|[Ee][Rr])?([AEIOUaeiou])([A-Za-z]*)([1-8fyqvxw])(\\{.*\\})?$/$1$2$3$5$4/"
+    - "derive/^([BCGHJKLMNPSTbcghjklmnpst]*)([Ii][Rr]?|[Uu]|[Ee][Rr])?([AEIOUaeiou])([1-8fyqvxw])([A-Za-z]*)(\\{.*\\})?$/$1$2$3$5$4/"
 #泥來。部分地區l讀如d。
     - "derive/^l/d/"
     - "derive/^l/r/"
-    - "derive/^n/nd/"
 #日母的其他處理。
     - "derive/^dz/j/"
     - "derive/^z/j/"
-#z鍵在羅馬字輸入法中用來輸入連字符用，所以下面的注意要注釋掉。
     - "derive/^j/dz/"
     - "derive/^j/z/"
-#允許省略音節尾的鼻化符號。
-    - "derive/^(.+)nn$/$1/"
-#允許省略音節尾的喉塞符號。
-    - "derive/^(.+)h$/$1/"
-#允許鼻化和閉音節ou全寫。
-    - "derive/onn/ounn/"
-    - "derive/om/oum/"
-    - "derive/ong/oung/"
-    - "derive/op/oup/"
-    - "derive/ok/ouk/"
-    - "derive/ot/out/"
-    - "derive/oh/ouh/"
-#莆仙的齒齦邊擦音sl/ɬ/，音位和s/s/一樣。
-    - "derive/^s/sl/"
-#閩東。
-#上聲全部視爲陰上3。
-#清齒擦s[θ]，音位s/s/。
-#y→ir，ee[ø]→eo。
-#oe[œ], or[ɒ]
-#u[w], ir[ɥ]。
-    #擬音 杯盃 ue=uoi
-    - "derive/uoi$/ue/"
-    #韻母合併 ui=uoi 杯盃→輝龜
-    - "derive/uoi$/ui/"
-    #韻母合併 iu=ieu 燒嬌→秋周 • [話] iau
-    - "derive/ieu$/iu/"
-    - "derive/ieu$/iau/"
-    - "derive/iau/ieu/"
-    #韻母合併 ua=uai 歪乖→花瓜 • ui=uai 輝龜
-    - "derive/uai$/ua/"
-    - "derive/uai$/ui/"
-    #漳泉亂 舌齒音聲母+香•橋韻→光•過韻
-    - "derive/^([t(th)nlc(ch)])io/$1uo/"
-    # 香姜 yøŋ 古田
-    - "derive/iong$/ireong/"
-    - "derive/iok$/ireok/"
-    # 燈庚 eiŋ 古田 福州
-    - "derive/eng$/eing/"
-    - "derive/ek$/eik/"
-    # 釭綱 ouŋ 古田 福州
-    - "derive/ong$/oung/"
-    - "derive/ok$/ouk/"
-    # 東江 øyŋ 古田 福州
-    - "derive/eong$/eoirng/"
-    - "derive/eok$/eoirk/"
-    # 橋嬝 yø 古田
-    - "derive/io$/ireo/"
-    - "derive/ioh$/ireoh/"
-    # 催 øy 福州
-    - "derive/oi$/eoir/"
-    # 今音 ie=ia=ya 𤬣桸
-    - "derive/ira$/ie/"
-    - "derive/ira$/ia/"
-#莆仙。
-    - "derive/Er/eo/"
-    - "derive/eo/er/"
-#海南。
-#f→ph，v→b
-    #海南的内爆音，音位和各對應聲母一樣。
-    - "derive/^p/bp/"
-    - "derive/^t/dt/"
-    - "derive/^g/gg/"
-    - "derive/^h/hh/"
-    #海南的ht[h]和hk[h]，音位分別和th[tʰ]和kh[kʰ]一樣。不知來源時統一寫ht。
-    - "derive/^th/ht/"
-    - "derive/^kh/ht/"
-    - "derive/^kh/hk/"
-    #海南的ss[s]，音位ch[tsʰ]。 
-    - "derive/^ch/ss/"
-    #海南的tt[t]，音位s[s]或部分[ts]。 
-    - "derive/^s/tt/"
-    - "derive/^c/tt/"
 #以下是對閩南不同地區的單向轉寫。
 #泉。
     - "derive/uih/ueh/"
@@ -348,14 +254,10 @@ speller:
     - "derive/aI/ui/"
     - "derive/aI/ai/"
     - "derive/^mue/mui/"
-    - "derive/ern(\\d?\\s?)/un$1/"
+    - "derive/ern([1-8fyqvxw])?(\\{.*\\})?/un$1/"
     - "derive/ern/irn/"
     - "derive/IR/ir/"
-    - "derive/oO/oo/"
-    - "derive/oU/oo/"
-    - "derive/oO/ou/"
-    - "derive/oU/ou/"
-    - "derive/ik/iak/\t"
+    - "derive/ik/iak/"
     - "derive/erm/im/"
 #惠安。
     - "derive/im/em/"
@@ -383,7 +285,6 @@ speller:
     - "derive/er(h?)(.)/ue$1$2/"
     - "derive/ere/e/"
     - "derive/uainn/uenn/"
-    - "derive/^(k)uainn([256])/$1uan$2/"
     - "derive/aInn/an/"
     - "derive/^ngaI/gan/"
     - "derive/^mue/bue/"
@@ -394,15 +295,7 @@ speller:
     - "derive/uI/ui/"
     - "derive/khIR/khir/"
 #漳南。
-    - "derive/ing/eng/"	
-#    - derive/oo/ou/
-#    - "derive/^([ptkblghcjs])?e(\\d)$/$1ei$2/"
-    - "derive/^([^eur]*)e(\\d?)$/$1ei$2/"
-#浙南、潮州和汕頭新派。
-    - "derive/am/ang/"
-    - "derive/ap/ak/"
-    - "derive/em/eng/"
-    - "derive/ep/ek/"
-    - "derive/im/ing/"
-    - "derive/ip/ik/"
-
+    - "derive/i(ng|k)/e$1/"
+    - "derive/i(ng|k)/io$1/"
+    - "derive/^([^eur]*)e([1-8fyqvxw])?(\\{.*\\})?$/$1ei$2/"
+    - "derive/^([^eur]*)e([1-8fyqvxw])?(\\{.*\\})?$/$1iei$2/"

@@ -17,7 +17,7 @@
 schema:
   schema_id: piobin_latin
   name: Pio Bîn
-  version: "20200913"
+  version: "20220805"
   author:
     - 作者：共通閩語QQ羣
   description: |
@@ -99,6 +99,7 @@ engine:
     - punct_translator
     - echo_translator
     - r10n_translator
+    - trivial_translator
     - script_translator
     - table_translator
 #    - reverse_lookup_translator
@@ -191,46 +192,43 @@ speller:
   alphabet: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~[/\\]90-;"
   algebra:
 #只輸入聲母的快速雙拼出詞。
-    - "abbrev/^([ptkbgmlsch]h?).+$/$1/"
-#用廢棄字母轉寫聲調。
+    - "abbrev/^([bcghjklmnpst]h?).+$/$1/"
+#美式鍵盤輸入效率最大化，儘量用一個鍵。
+    - "derive/^c/ts/"
+    - "derive/^ts/c/"
+    - "derive/^C/Ts/"
+    - "derive/^Ts/C/"
+#臺羅用oo表示/ɔ/，現用ou。
+    - "derive/[Oo][oUu]/oo/"
+    - "derive/[Oo][oUu]/ou/"
+#臺羅用ee表示/ɛ/，現用ae。
+    - "derive/[Aa]e/ee/"
+    - "derive/[Ee]e/ae/"
+#臺羅聲化韻新表示方法。
+    - "derive/^([BCGHJKLMNPSTbcghjklmnpst]*)(ng|m)(h?)([1-8fyqvxw])?(\\{.*\\})?$/$1ir$2$3/"
+    - "derive/([BCGHJKLMNPSTbcghjklmnpst]*)ir(ng|m)(h?)/$1$2$3/"
+#用廢棄字母轉寫聲調。總是位於最上。爲保持錄入詞庫材料時的格式多樣性和自由度，不採用xlit或xform等強制轉換。
+#    - "xlit/12345678/fyqvxwfy/" #轉寫上有問題
     - "derive/1/f/"
     - "derive/2/y/"
     - "derive/3/q/"
     - "derive/4/v/"
     - "derive/5/x/"
-    - "derive/6/w/"
+    - "derive/[46]/w/" #漳系。
     - "derive/7/f/"
     - "derive/8/y/"
-#廢棄字母標調方案中的漳系。
-    - "derive/4/w/"
-#顯示音韻學信息的同時無需鍵入聲調。（注意：要雙斜杆注釋！并且需要置於廢棄字母標調之後！）
-    - "derive/^([A-Za-z]+)\\d$/$1/"
-    - "derive/^([A-Za-z]+)(\\d?)(\\{.+\\})$/$1/"
-#美式鍵盤輸入效率最大化，儘量用一個鍵。
-    - "derive/^c/ts/"
-    - "derive/^ts/c/"
-#臺羅用oo表示/ɔ/，現用ou。
-    - "derive/oo/ou/"
-    - "derive/oO/ou/"
-    - "derive/ou/oo/"
-#臺羅用ee表示/ɛ/，現用ae。
-    - "derive/ee/ae/"
-    - "derive/ae/ee/"
-#臺羅聲化韻新表示方法。
-    - "derive/ng/irng/"
-    - "derive/m/irm/"
-    - "derive/irng/ng/"
-    - "derive/irm/m/"
+#允許省略音節尾的鼻化或喉塞符號，無需鍵入聲調，但保留顯示音韻學信息。需要置於廢棄字母標調之後。
+#注意：要雙斜杆注釋！（不信可以看部署時Temp文件夾內的error log）
+#目前已實現“鍵入不帶調拼音，檢到帶調詞組”，但是相反方向，“鍵入帶調拼音，檢到不帶調詞組”未能實現。
+    - "derive/^([A-Za-z]+)(nn|h)?([1-8fyqvxw])?(\\{.*\\})?$/$1/"
+#鍵入聲調時，位置可以在元音旁，也可以在音節末尾。本語句需要位於刪去聲調語句和臺羅聲化韻ng/m改寫之後。
+    - "derive/^([BCGHJKLMNPSTbcghjklmnpst]*)([Ii][Rr]?|[Uu]|[Ee][Rr])?([AEIOUaeiou])([A-Za-z]*)([1-8fyqvxw])(\\{.*\\})?$/$1$2$3$5$4/"
+    - "derive/^([BCGHJKLMNPSTbcghjklmnpst]*)([Ii][Rr]?|[Uu]|[Ee][Rr])?([AEIOUaeiou])([1-8fyqvxw])([A-Za-z]*)(\\{.*\\})?$/$1$2$3$5$4/"
 #泥來。部分地區l讀如d。
     - "derive/^l/d/"
     - "derive/^l/r/"
-    - "derive/^n/nd/"
 #日母的其他處理。
     - "derive/^dz/j/"
     - "derive/^z/j/"
     - "derive/^j/dz/"
     - "derive/^j/z/"
-#允許省略音節尾的鼻化符號。
-    - "derive/^(.+)nn$/$1/"
-#允許省略音節尾的喉塞符號。
-    - "derive/^(.+)h$/$1/"
