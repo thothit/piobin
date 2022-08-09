@@ -54,12 +54,14 @@ import_tables:
 #這個三點省略號是分割stream的標誌，不可省略！
 ### 語音常識
 ## 聲符説明
-(None)	f{陰平/陰入無標符}	1000
-ˆ(Circumflex)	y{陽平/陽入揚抑符}	1000
-´(Acute)	q{陰上尖音符}	1000
-ˇ(Caron)	v{陽上抑揚符}	1000
-`(Grave)	x{陰去重音符}	1000
-¯(Macron)	w{陽去長音符}	1000
+̉ (Hook above)	z{輕聲，上鉤符}	1000
+(None)	f{陰平或陰入，無標符}	1000
+ˆ(Circumflex)	y{陽平或陽入，揚抑符}	1000
+´(Acute)	q{陰上，尖音符}	1000
+ˇ(Caron)	v{陽上，抑揚符}	1000
+`(Grave)	x{陰去，重音符}	1000
+¯(Macron)	w{陽去，長音符}	1000
+̈ (Diaeresis)	d{合音或連音，分音符}	1000
 ## 單元音説明
 #小寫
 A	a1{[a]陰平}	1000
@@ -190,8 +192,8 @@ ou	ou7{[ou]/[ɔ]陰入}	1000
 ě	e4{[e]陽上}	1000
 Ěo	eo4{[ø]陽上}	1000
 ěo	eo4{[ø]陽上}	1000
-Ěr	er{[ə]陽上}	1000
-ěr	er{[ə]陽上}	1000
+Ěr	er4{[ə]陽上}	1000
+ěr	er4{[ə]陽上}	1000
 Ǐ	i4{[i]陽上}	1000
 ǐ	i4{[i]陽上}	1000
 Ǐr	ir4{[ɨ]/[ï]/[ɯ̈]/[y]陽上}	1000
@@ -242,8 +244,8 @@ ou	ou7{[ou]/[ɔ]陰入}	1000
 ēr	er6{[ə]陽去}	1000
 Ī	i6{[i]陽去}	1000
 ī	i6{[i]陽去}	1000
-Īr	ir6{[ɨ]/[ï]/[ɯ̈]/[y]去}	1000
-īr	ir6{[ɨ]/[ï]/[ɯ̈]/[y]去}	1000
+Īr	ir6{[ɨ]/[ï]/[ɯ̈]/[y]陽去}	1000
+īr	ir6{[ɨ]/[ï]/[ɯ̈]/[y]陽去}	1000
 Ō	o6{[ə]/[o]/[ɣ]/[ɵ]陽去}	1000
 ō	o6{[ə]/[o]/[ɣ]/[ɵ]陽去}	1000
 Ōe	oe6{[œ]陽去}	1000
@@ -254,6 +256,54 @@ ou	ou7{[ou]/[ɔ]陰入}	1000
 ū	u6{[u]陽去}	1000
 Ōu	ou6{[ou]/[ɔ]陽去}	1000
 ōu	ou6{[ou]/[ɔ]陽去}	1000
+Ả	a0{[a]輕聲}	1000
+ả	a0{[a]輕聲}	1000
+Ảe	ae0{[ɛ]/[æ]輕聲}	1000
+ảe	ae0{[ɛ]/[æ]輕聲}	1000
+Ẻ	e0{[e]輕聲}	1000
+ẻ	e0{[e]輕聲}	1000
+Ẻo	eo0{[ø]輕聲}	1000
+ẻo	eo0{[ø]輕聲}	1000
+Ẻr	er0{[ə]輕聲}	1000
+ẻr	er0{[ə]輕聲}	1000
+Ỉ	i0{[i]輕聲}	1000
+ỉ	i0{[i]輕聲}	1000
+Ỉr	ir0{[ɨ]/[ï]/[ɯ̈]/[y]輕聲}	1000
+ỉr	ir0{[ɨ]/[ï]/[ɯ̈]/[y]輕聲}	1000
+Ỏ	o0{[ə]/[o]/[ɣ]/[ɵ]輕聲}	1000
+ỏ	o0{[ə]/[o]/[ɣ]/[ɵ]輕聲}	1000
+Ỏe	oe0{[œ]輕聲}	1000
+ỏe	oe0{[œ]輕聲}	1000
+Ỏr	or0{[ɒ]輕聲}	1000
+ỏr	or0{[ɒ]輕聲}	1000
+Ủ	u0{[u]輕聲}	1000
+ủ	u0{[u]輕聲}	1000
+Ỏu	ou0{[ou]/[ɔ]輕聲}	1000
+ỏu	ou0{[ou]/[ɔ]輕聲}	1000
+Ä	a9{[a]合連}	1000
+ä	a9{[a]合連}	1000
+Äe	ae9{[ɛ]/[æ]合連}	1000
+äe	ae9{[ɛ]/[æ]合連}	1000
+Ë	e9{[e]合連}	1000
+ë	e9{[e]合連}	1000
+Ëo	eo9{[ø]合連}	1000
+ëo	eo9{[ø]合連}	1000
+Ër	er9{[ə]合連}	1000
+ër	er9{[ə]合連}	1000
+Ï	i9{[i]合連}	1000
+ï	i9{[i]合連}	1000
+Ïr	ir9{[ɨ]/[ï]/[ɯ̈]/[y]合連}	1000
+ïr	ir9{[ɨ]/[ï]/[ɯ̈]/[y]合連}	1000
+Ö	o9{[ə]/[o]/[ɣ]/[ɵ]合連}	1000
+ö	o9{[ə]/[o]/[ɣ]/[ɵ]合連}	1000
+Öe	oe9{[œ]合連}	1000
+öe	oe9{[œ]合連}	1000
+Ör	or9{[ɒ]合連}	1000
+ör	or9{[ɒ]合連}	1000
+Ü	u9{[u]合連}	1000
+ü	u9{[u]合連}	1000
+Öu	ou9{[ou]/[ɔ]合連}	1000
+öu	ou9{[ou]/[ɔ]合連}	1000
 #大寫
 A	A1{[a]陰平}	1000
 a	A1{[a]陰平}	1000
@@ -383,8 +433,8 @@ ou	Ou7{[ou]/[ɔ]陰入}	1000
 ě	E4{[e]陽上}	1000
 Ěo	Eo4{[ø]陽上}	1000
 ěo	Eo4{[ø]陽上}	1000
-Ěr	Er{[ə]陽上}	1000
-ěr	Er{[ə]陽上}	1000
+Ěr	Er4{[ə]陽上}	1000
+ěr	Er4{[ə]陽上}	1000
 Ǐ	I4{[i]陽上}	1000
 ǐ	I4{[i]陽上}	1000
 Ǐr	Ir4{[ɨ]/[ï]/[ɯ̈]/[y]陽上}	1000
@@ -435,8 +485,8 @@ ou	Ou7{[ou]/[ɔ]陰入}	1000
 ēr	Er6{[ə]陽去}	1000
 Ī	I6{[i]陽去}	1000
 ī	I6{[i]陽去}	1000
-Īr	Ir6{[ɨ]/[ï]/[ɯ̈]/[y]去}	1000
-īr	Ir6{[ɨ]/[ï]/[ɯ̈]/[y]去}	1000
+Īr	Ir6{[ɨ]/[ï]/[ɯ̈]/[y]陽去}	1000
+īr	Ir6{[ɨ]/[ï]/[ɯ̈]/[y]陽去}	1000
 Ō	O6{[ə]/[o]/[ɣ]/[ɵ]陽去}	1000
 ō	O6{[ə]/[o]/[ɣ]/[ɵ]陽去}	1000
 Ōe	Oe6{[œ]陽去}	1000
@@ -447,6 +497,54 @@ ou	Ou7{[ou]/[ɔ]陰入}	1000
 ū	U6{[u]陽去}	1000
 Ōu	Ou6{[ou]/[ɔ]陽去}	1000
 ōu	Ou6{[ou]/[ɔ]陽去}	1000
+Ả	A0{[a]輕聲}	1000
+ả	A0{[a]輕聲}	1000
+Ảe	Ae0{[ɛ]/[æ]輕聲}	1000
+ảe	Ae0{[ɛ]/[æ]輕聲}	1000
+Ẻ	E0{[e]輕聲}	1000
+ẻ	E0{[e]輕聲}	1000
+Ẻo	Eo0{[ø]輕聲}	1000
+ẻo	Eo0{[ø]輕聲}	1000
+Ẻr	Er0{[ə]輕聲}	1000
+ẻr	Er0{[ə]輕聲}	1000
+Ỉ	I0{[i]輕聲}	1000
+ỉ	I0{[i]輕聲}	1000
+Ỉr	Ir0{[ɨ]/[ï]/[ɯ̈]/[y]輕聲}	1000
+ỉr	Ir0{[ɨ]/[ï]/[ɯ̈]/[y]輕聲}	1000
+Ỏ	O0{[ə]/[o]/[ɣ]/[ɵ]輕聲}	1000
+ỏ	O0{[ə]/[o]/[ɣ]/[ɵ]輕聲}	1000
+Ỏe	Oe0{[œ]輕聲}	1000
+ỏe	Oe0{[œ]輕聲}	1000
+Ỏr	Or0{[ɒ]輕聲}	1000
+ỏr	Or0{[ɒ]輕聲}	1000
+Ủ	U0{[u]輕聲}	1000
+ủ	U0{[u]輕聲}	1000
+Ỏu	Ou0{[ou]/[ɔ]輕聲}	1000
+ỏu	Ou0{[ou]/[ɔ]輕聲}	1000
+Ä	A9{[a]合連}	1000
+ä	A9{[a]合連}	1000
+Äe	Ae9{[ɛ]/[æ]合連}	1000
+äe	Ae9{[ɛ]/[æ]合連}	1000
+Ë	E9{[e]合連}	1000
+ë	E9{[e]合連}	1000
+Ëo	Eo9{[ø]合連}	1000
+ëo	Eo9{[ø]合連}	1000
+Ër	Er9{[ə]合連}	1000
+ër	Er9{[ə]合連}	1000
+Ï	I9{[i]合連}	1000
+ï	I9{[i]合連}	1000
+Ïr	Ir9{[ɨ]/[ï]/[ɯ̈]/[y]合連}	1000
+ïr	Ir9{[ɨ]/[ï]/[ɯ̈]/[y]合連}	1000
+Ö	O9{[ə]/[o]/[ɣ]/[ɵ]合連}	1000
+ö	O9{[ə]/[o]/[ɣ]/[ɵ]合連}	1000
+Öe	Oe9{[œ]合連}	1000
+öe	Oe9{[œ]合連}	1000
+Ör	Or9{[ɒ]合連}	1000
+ör	Or9{[ɒ]合連}	1000
+Ü	U9{[u]合連}	1000
+ü	U9{[u]合連}	1000
+Öu	Ou9{[ou]/[ɔ]合連}	1000
+öu	Ou9{[ou]/[ɔ]合連}	1000
 #以下單字音皆采用廣韻注釋。數字調羅馬字。S為標準音(Stantard)，H為慣音(Habitual)。
 ### 單字音(末尾標調)
 娿	o1{S影果一開歌平}	
@@ -26449,7 +26547,7 @@ ou	Ou7{[ou]/[ɔ]陰入}	1000
 痐	hue2{S非廣韻字}	1
 痘	tau6{S非廣韻字}	1
 痚	hau1{S非廣韻字}	1
-痧	sua{S非廣韻字}	1
+痧	sua1{S非廣韻字}	1
 痭	phing1{S非廣韻字}	1
 痷	am1{S非廣韻字}	1
 痺	pi5{S非廣韻字}	1
@@ -29133,7 +29231,6 @@ k	khek7{S非廣韻字}	1
 孓	khuok7{S非廣韻字}	1
 斈	hok8{S非廣韻字}	1
 㝎	ting6{S非廣韻字}	1
-实	sik8{S非廣韻字}	1
 宻	mik8{S非廣韻字}	1
 寕	ning2{S非廣韻字}	1
 寿	siu6{S非廣韻字}	1
@@ -30513,7 +30610,7 @@ k	khek7{S非廣韻字}	1
 廠	gan6{H昌宕三開陽去}	1
 鬯	thiang5{H徹宕三開陽去}	1
 巢	chau2{H崇效二開肴平}	1
-勦	chau{H崇效二開肴平}	1
+勦	chau2{H崇效二開肴平}	1
 樔	chau1{H崇效二開肴平}	1
 摷	liau2{H莊效二開肴平}	1
 繅	sou1{H心效一開豪平}	1
@@ -32526,7 +32623,7 @@ k	khek7{S非廣韻字}	1
 齦	gern2{H溪山二開山上}	1
 豤	khun3{H溪山四開先上}	1
 恨	hun6{H匣臻一開痕去}	1
-艮	kern３{H見臻一開痕去}	1
+艮	kern3{H見臻一開痕去}	1
 茛	kun5{H見臻一開痕去}	1
 珢	ngirng2{H見臻一開痕去}	1
 艱	kian1{H見山二開山平}	1
@@ -36286,7 +36383,7 @@ k	khek7{S非廣韻字}	1
 丏	bian3{H明山四開先上}	1
 眄	bian3{H明山四開先上}	1
 沔	bian3{H明山三開仙A上}	1
-麪	mi{H明山四開先去}	1
+麪	mi6{H明山四開先去}	1
 眄	bian3{H明山四開先去}	1
 鞔	buan2{H明山一開寒平}	1
 悗	buan2{H明山一開寒平}	1
@@ -40198,9 +40295,9 @@ k	khek7{S非廣韻字}	1
 削	siah7{H心宕三開陽入}	1
 梟	hiau1{H見效四開蕭平}	1
 嘄	kiau1{H疑效四開蕭去}	1
-藃	haunnh{H曉效三開宵B平}	1
-藃	haunnh{H曉效二開肴平}	1
-藃	haunnh{H曉效一開豪去}	1
+藃	haunnh7{H曉效三開宵B平}	1
+藃	haunnh7{H曉效二開肴平}	1
+藃	haunnh7{H曉效一開豪去}	1
 囂	hau1{H曉效三開宵B平}	1
 小	siau3{H心效三開宵A上}	5
 肖	siau1{H心效三開宵A去}	1
@@ -45162,7 +45259,7 @@ k	khek7{S非廣韻字}	1
 勦	chau2{H崇效二開肴平}	10
 繅	chau2{H心效一開豪平}	1
 剿	ciau3{H精效三開宵A上}	1
-勦	chau{H精效三開宵A上}	1
+勦	chau2{H精效三開宵A上}	1
 繅	chau2{H精效一開豪上}	1
 巢	chau2{H崇效二開肴去}	1
 朝	tiau2{H知效三開宵B平}	1
@@ -45273,14 +45370,14 @@ k	khek7{S非廣韻字}	1
 衄	lok7{H娘通三開東入}	1
 糗	hiunn5{H溪流三開尤上}	1
 臭	hiunn5{H昌流三開尤去}	1
-出	kut{H昌止三合脂A去}	1
+出	kut7{H昌止三合脂A去}	1
 茁	cuek7{H知臻三合真B入}	1
 黜	thut7{H徹臻三合真B入}	1
 炪	cuok7{H徹臻三合真B入}	1
 窋	tut8{H知臻三合真B入}	1
 絀	cuek7{H知臻三合真B入}	1
 泏	cuat7{H知臻三合真B入}	1
-出	kut{H昌臻三合真A入}	1
+出	kut7{H昌臻三合真A入}	1
 咄	cuek7{H端臻一合魂入}	1
 柮	thuk7{H端臻一合魂入}	1
 泏	cuat7{H溪臻一合魂入}	1
@@ -51571,7 +51668,7 @@ k	khek7{S非廣韻字}	1
 奚	hie2{H匣蟹四開齊平}	1
 蹊	hi2{H匣蟹四開齊平}	1
 鼷	hie2{H匣蟹四開齊平}	1
-谿	khe{H溪蟹四開齊平}	1
+谿	khe1{H溪蟹四開齊平}	1
 溪	khoi1{H溪蟹四開齊平}	1
 徯	hie2{H匣蟹四開齊上}	1
 氂	lie2{H來止三開之平}	1
@@ -52000,8 +52097,8 @@ k	khek7{S非廣韻字}	1
 釾	nga6{H以假三開麻平}	1
 牙	ge2{H疑假二開麻平}	1
 芽	ge2{H疑假二開麻平}	1
-呀	ia{H疑假二開麻平}	1
-呀	ia{H曉假二開麻平}	1
+呀	ia2{H疑假二開麻平}	1
+呀	ia2{H曉假二開麻平}	1
 雅	ngae3{H疑假二開麻上}	1
 迓	nga6{H疑假二開麻去}	1
 訝	gae6{H疑假二開麻去}	1
@@ -59882,14 +59979,14 @@ k	khek7{S非廣韻字}	1
 于	i1{H云遇三合虞平}	10
 迂	ir1{H云遇三合虞平}	1
 雩	ir6{H云遇三合虞平}	1
-芋	i{H云遇三合虞平}	1
+芋	i2{H云遇三合虞平}	1
 汙	ua1{H云遇三合虞平}	1
 訏	hir1{H曉遇三合虞平}	1
 雩	ir2{H曉遇三合虞平}	1
 盱	hir1{H曉遇三合虞平}	1
 宇	ir3{H云遇三合虞上}	1
 迂	ir1{H影遇三合虞上}	1
-芋	i{H云遇三合虞去}	1
+芋	i6{H云遇三合虞去}	1
 汙	ua1{H影遇一開模去}	1
 蜍	su2{H以遇三開魚平}	1
 畬	sia1{H以遇三開魚平}	1
@@ -87999,15 +88096,15 @@ k	khek7{S非廣韻字}	1
 阿斗	a1 tio3
 阿飛	a1 hui1
 阿附	o1 hu5
-阿富汗	A1 Hu5 Han6
-亞付眼	A5 Pu5 Gan4
+阿富汗	a1 hu5 han6
+亞付眼	a5 pu5 gan4
 阿敢	ah8 kann3
 阿哥	a1 ko1
-阿根廷	A1 KErn1 Thing2
-阿根廷	A1 KErn1 Ting2
-阿根廷	A1 Kin1 Ting2
-阿根廷	A1 Kun1 Ting2
-阿銀智那	A1 Gern2 Ti5 Na6
+阿根廷	a1 kErn1 thing2
+阿根廷	a1 kErn1 ting2
+阿根廷	a1 kin1 ting2
+阿根廷	a1 kun1 ting2
+阿銀智那	a1 gern2 ti5 na6
 阿公	a1 kong1
 阿狗	a1 kau3
 阿狗垂	a1 kau3 se2
@@ -88027,14 +88124,14 @@ k	khek7{S非廣韻字}	1
 阿毑	a1 cia3
 阿妗	a1 kim4
 阿舅	a1 ku4
-阿拉伯	A1 La1 Pik7
-阿拉伯語	A1 La1 Pik7 GIR3
-亞剌尾	A5 Lat8 Ber4
-亞剌尾	A5 Lat8 Bui4
-亞剌尾	A5 Lat8 Bue3
-亞剌尾	A5 Lat8 Be3
-亞剌尾語	A5 Lat8 BEr4 GIR3
-亞剌尾儂	A5 Lat8 BEr4 Lang2
+阿拉伯	a1 la1 pik7
+阿拉伯語	a1 la1 pik7 gIR3
+亞剌尾	a5 lat8 ber4
+亞剌尾	a5 lat8 bui4
+亞剌尾	a5 lat8 bue3
+亞剌尾	a5 lat8 be3
+亞剌尾語	a5 lat8 bEr4 gIR3
+亞剌尾儂	a5 lat8 bEr4 lang2
 阿老	a3 lau4
 阿咾	o1 lo3
 阿哩	a1 li1
@@ -88064,9 +88161,9 @@ k	khek7{S非廣韻字}	1
 阿孃	a1 nia2
 阿若	a1 na6
 阿若無	a1 na6 bo2
-阿塞拜疆	A1 Sai5 Pai5 Kiong1
-亞挼埋然	A5 Jer2 Bai2 Jian2
-阿三哥仔	a1 sam1 ko1 a
+阿塞拜疆	a1 sai5 pai5 kiong1
+亞挼埋然	a5 jer2 bai2 jian2
+阿三哥仔	a1 sam1 ko1 a3
 阿嫂	a1 so3
 阿舍	a1 sia5
 阿舍囝	a1 sia5 kann3
@@ -88121,9 +88218,9 @@ k	khek7{S非廣韻字}	1
 哀痛	ai1 thong5
 哀怨	ai1 uan5
 哀樂	ai1 gak8
-埃及	Ai1 Kip8
-埃岌	Ai1 Gip8
-埃岌朵	Ai1 Gip8 Ter3
+埃及	ai1 kip8
+埃岌	ai1 gip8
+埃岌朵	ai1 gip8 ter3
 挨吹唱	ue1 che1 chiunn5
 挨吹唱	ue1 cher1 chiunn5
 挨吹拍	ue1 che1 phah7
@@ -88189,10 +88286,10 @@ k	khek7{S非廣韻字}	1
 艾條	hiann5 tiau2
 愛稱	ai5 ching1
 愛戴	ai5 tai5
-愛爾蘭	Ai5 Ni4 Lan2
-愛爾蘭語	Ai5 Ni4 Lan2 GIR3
-愛渦蘭地	Ai5 Er1 Lan2 Ter6
-愛渦蘭地語	Ai5 Er1 Lan2 Ter6 GIR3
+愛爾蘭	ai5 ni4 lan2
+愛爾蘭語	ai5 ni4 lan2 gIR3
+愛渦蘭地	ai5 er1 lan2 ter6
+愛渦蘭地語	ai5 er1 lan2 ter6 gIR3
 愛撫	ai5 bu3
 愛撫	ai5 hu3
 愛撫	ai5 phu3
@@ -88346,7 +88443,7 @@ k	khek7{S非廣韻字}	1
 暗場	am5 tionn2
 暗場	am5 tiunn2
 暗暢	am5 thiong5
-暗帶	am5 ter
+暗帶	am5 ter5
 暗袋	am5 te6
 暗袋	am5 ter5
 暗淡	am5 tam6
@@ -89065,12 +89162,12 @@ k	khek7{S非廣韻字}	1
 寶相	po3 siong5
 寶座	po3 co4
 抱不平	phau4 put7 ping2
-抱的	pho4 e
+抱的	pho4 e2
 抱負	phau6 hu6
 抱狗仔	pho6 kau3 a3
 抱恨	phau4 hun5
 抱恨	phau6 hin6
-抱來的	pho6 lai e
+抱來的	pho6 lai2 e2
 抱歉	phau6 khiam3
 抱心	pho6 sim1
 抱心爿	pho4 sim1 puĩ2
@@ -89158,7 +89255,7 @@ k	khek7{S非廣韻字}	1
 暴支膺懲	po6 ci1 ing1 ting2
 爆發	pok8 huat7
 爆裂	pok8 liat8
-爆破	pok7 phua
+爆破	pok7 phua5
 爆破	pok8 pho5
 爆破	pok8 phou5
 爆芽	pok7 gae2
@@ -89191,7 +89288,7 @@ k	khek7{S非廣韻字}	1
 悲咽	pi1 iat7
 悲壯	pi1 cong5
 碑帖	pi1 thiap7
-北邊	pak7 pinn
+北邊	pak7 pinn1
 北部	pak7 pou4
 北蔥	pak7 chang1
 北調	pak7 tiau6
@@ -89204,8 +89301,8 @@ k	khek7{S非廣韻字}	1
 北面	pak7 bin5
 北爿	pak7 ping2
 北曲	pak7 khik7
-北勢	pak7 si
-北頭	pak7 tau
+北勢	pak7 si5
+北頭	pak7 tau2
 北仔	pak7 a3
 北仔阿哥	pak7 a3 a1 ko1
 北仔餅	pak7 a3 piann3
@@ -89494,7 +89591,7 @@ k	khek7{S非廣韻字}	1
 筆仔尾	pit7 a3 be3
 筆仔尾	pit7 a3 ber3
 筆仔尾	pit7 a3 bue3
-筆者	pit cia3
+筆者	pit7 cia3
 筆直	pit7 tit8
 筆窒	pit7 that7
 鄙厘	phi3 li2
@@ -89579,8 +89676,7 @@ k	khek7{S非廣韻字}	1
 編導	pian1 to6
 編號	phian1 ho5
 編輯	phian1 chip7
-編輯	phiau1 chip7
-編輯	pian1 cip
+編輯	pian1 cip7
 編髻仔	pinn1 ke5 a3
 編髻仔	pinn4 ker5 a3
 編碼	phian1 be3
@@ -89624,7 +89720,7 @@ k	khek7{S非廣韻字}	1
 邊境	pian1 king3
 邊墘	pinn1 kinn2
 邊塞	pian1 sai5
-邊頭	pinn1 thau
+邊頭	pinn1 thau2
 邊沿	pian1 ian2
 邊緣	pian1 ian2
 邊遠	pian1 uan3
@@ -89767,7 +89863,7 @@ k	khek7{S非廣韻字}	1
 表阿姊	piau3 a1 ci3
 表白	piau3 piak8
 表達	piau3 tat8
-表的	piau3 e
+表的	piau3 e2
 表格	pio3 kaeh7
 表格	pio3 keh7
 表決	piau3 kuat7
@@ -90104,15 +90200,15 @@ k	khek7{S非廣韻字}	1
 補償	pou3 siong3
 補充	pou3 chiong1
 補鼎	pou3 tiann3
-補鼎的	pou3 tiann3 e
+補鼎的	pou3 tiann3 e2
 補冬	pou3 tang1
 補救	pou3 kiu5
 補考	pou3 kho3
 補考	pou3 khonn3
 補課	pou3 kho5
 補缺	pou3 khuat7
-補鉎鍋的	pou3 sinn1 e1 e
-補鉎鍋的	pou3 sinn1 er1 e
+補鉎鍋的	pou3 sinn1 e1 e2
+補鉎鍋的	pou3 sinn1 Er1 e2
 補聲	pou3 siann1
 補所	pou3 sou3
 補塌	pou3 thap7
@@ -90950,7 +91046,7 @@ k	khek7{S非廣韻字}	1
 拆落	thiah7 lau5
 拆明	thiah7 bing2
 拆票	thiah7 phio5
-拆破	thiah7 phua
+拆破	thiah7 phua5
 拆散	thiah7 suann5
 拆身	thiah7 sin1
 拆食	thiah7 ciah8
@@ -91014,7 +91110,7 @@ k	khek7{S非廣韻字}	1
 柴草間	ca2 chau3 kan1
 柴草間	ca2 chau3 king1
 柴草間	ca2 chau3 kuinn1
-柴柴	ca2  ca2 
+柴柴	ca2  ca2
 柴槌	ca2 thui2
 柴刀	ca2 to1
 柴枋	ca2 pang1
@@ -91133,8 +91229,8 @@ k	khek7{S非廣韻字}	1
 長城	tirng2 siann2
 長銃	tirng2 ching5
 長處	tiang2 chi5
-長處	tiong3 chIR
-長處	tiong3 chu
+長處	tiong3 chIR5
+長處	tiong3 chu5
 長吹	tirng2 che1
 長吹	tirng2 cher1
 長吹	tirng2 chue1
@@ -91913,7 +92009,7 @@ k	khek7{S非廣韻字}	1
 沖神	chiong1 sin2
 沖數	chiong1 siau5
 沖醒	ching5 chenn3
-沖著	ching5 tioh
+沖著	ching5 tioh8
 沖著鬼	ching5 tioh8 kui3
 茺縫	chang5 phang6
 茺喉	chang5 au2
@@ -92160,7 +92256,7 @@ k	khek7{S非廣韻字}	1
 出青	chut7 chenn1
 出青	chut7 chinn1
 出去	chut7 khi5
-出去	chut7 khIR
+出去	chut7 khIR5
 出讓	chut7 niou6
 出讓	chut7 niu5
 出人前	chut7 lang2 cing2
@@ -92494,9 +92590,9 @@ k	khek7{S非廣韻字}	1
 春分	chun1 hun1
 春光	chun1 kong1
 春節	chun1 ciat7
-春裡	chun1 li
+春裡	chun1 li3
 春聯	chun1 lian2
-春咧	chun1 ler
+春咧	chun1 ler3
 春鯊	chun1 sua1
 春水黴雨	chun1 cui3 bue2 hou6
 春水糜雨	chun1 cui3 mi2 hou6
@@ -92734,7 +92830,7 @@ k	khek7{S非廣韻字}	1
 促歲壽	chik7 hue5 siu6
 促尾	chik7 bue3
 瘄汙汙	chik7 ou5 ou5
-瘄著	chik7 tioh
+瘄著	chik7 tioh8
 𢄧木	cak7 bok8
 醋坩仔	chou5 kann1 a3
 醋神	chou5 sin2
@@ -92866,7 +92962,7 @@ k	khek7{S非廣韻字}	1
 搭肉	tah7 hiak8
 搭肉衫	tah7 bah7 sann1
 搭桶仔	tah7 thang3 a3
-搭頭的	tah7 thau2 e
+搭頭的	tah7 thau2 e2
 搭嚇	tah7 hiannh7
 搭心	tah7 sim1
 搭一股	tah7 cit8 kou3
@@ -93447,7 +93543,7 @@ k	khek7{S非廣韻字}	1
 檔次	tong5 chu5
 檔錢	tirng5 cinn2
 檔頭	tirng5 thau2
-黨參	tang3 som
+黨參	tang3 som1
 黨參	tong3 serm1
 黨參	tong3 song1
 黨籍	tong3 cik8
@@ -93501,17 +93597,17 @@ k	khek7{S非廣韻字}	1
 倒立	to3 lip8
 倒鐮	to3 nui2
 倒落	tah7 lo1
-倒落	to3 loh7
-倒落去	to3 loh khi
-倒落去	to3 loh khIR
+倒落	to3 loh8
+倒落去	to3 loh8 khi5
+倒落去	to3 loh8 khIR5
 倒芒	to3 menn2
 倒芒	to3 mi2
 倒楣	to3 bue2
 倒楣	to3 mui2
 倒拋	to5 pha1
 倒拋	to5 phua1
-倒去	to5 khi
-倒去	to5 khIR
+倒去	to5 khi5
+倒去	to5 khIR5
 倒人	to3 lang2
 倒市	to3 chi4
 倒是	to3 si4
@@ -93558,8 +93654,8 @@ k	khek7{S非廣韻字}	1
 倒欹人	to5 khia1 lang2
 倒影	to3 iann3
 倒運	to3 un5
-倒仔	lo5 a
-倒仔	to5 a
+倒仔	lo5 a3
+倒仔	to5 a3
 倒轉	to5 tirng3
 島嶼	to3 su6
 島嶼	tou3 sIR4
@@ -93759,8 +93855,12 @@ k	khek7{S非廣韻字}	1
 等級	ting3 kip7
 等價	ting3 kae5
 等久	tan3 ku3
-等一下	tan3 ce
+等一下	tan3 ce4
 等一下	tan3 cit8 e4
+等蜀下	tan3 ce4
+等蜀下	tan3 cit8 e4
+等蜀下	tan3 cik8 e4
+等獨下	tan3 cik8 e4
 戥盤	ting3 puann2
 戥仔	ting3 a3
 戥仔錘	ting3 a3 thui2
@@ -93850,7 +93950,7 @@ k	khek7{S非廣韻字}	1
 底蹋	tue3 tah7
 底蹋	te3 tap7
 底蹋	tue3 tap7
-底頭	tue3 thau
+底頭	tue3 thau2
 底細	te3 se5
 底下	te3 ae6
 底下	tue3 e4
@@ -94139,7 +94239,7 @@ k	khek7{S非廣韻字}	1
 吊傷	tiau5 siang1
 吊傷	tiau5 siong1
 吊手	tiau5 chiu3
-吊死	tiau5 si
+吊死	tiau5 si3
 吊桶	tiau5 thang3
 吊烏	tiau5 ou1
 吊烏桶	tiau5 ou1 thang3
@@ -94306,8 +94406,8 @@ k	khek7{S非廣韻字}	1
 定律	ting5 lut8
 定盤	tiann5 puann2
 定期	ting5 ki2
-定去	tiann5 khIR
-定去	tiann6 khi
+定去	tiann5 khIR5
+定去	tiann6 khi5
 定向	ting5 hiong5
 定向	ting6 hiang5
 定型	ting5 hing2
@@ -94351,7 +94451,7 @@ k	khek7{S非廣韻字}	1
 東北	tang1 pak7
 東北侉	tang1 pak7 o5
 東北侉	tang1 pak7 khua5
-東邊	tang1 pinn
+東邊	tang1 pinn1
 東部	tang1 pou4
 東道主	tong1 to6 cu3
 東道主	tong1 tou4 cu3
@@ -94362,11 +94462,11 @@ k	khek7{S非廣韻字}	1
 東家	tong1 kae1
 東面	tang1 bin5
 東南	tang1 lam2
-東爿	tang1 ping
+東爿	tang1 ping2
 東錢	tong1 cinn2
 東山人	tang1 suann1 lang2
-東勢	tang1 si
-東頭	tang1 thau
+東勢	tang1 si5
+東頭	tang1 thau2
 東西	tong1 si1
 懂得	tong3 tiak7
 懂得	tong3 tik7
@@ -94483,7 +94583,7 @@ k	khek7{S非廣韻字}	1
 逗號	tou6 ho6
 鬥伴	tau5 phuann4
 鬥搭	tau5 tah7
-鬥的	tau5 e
+鬥的	tau5 e2
 鬥燈	tau3 ting1
 鬥槩	tau3 kai5
 鬥夥記	tau5 hue3 ki5
@@ -94509,7 +94609,7 @@ k	khek7{S非廣韻字}	1
 鬥心適	tau5 sim1 siak7
 鬥心適	tau5 sim1 sik7
 鬥陣	tau5 tin5
-鬥陣的	tau5 tin5 e
+鬥陣的	tau5 tin5 e2
 鬥爭	tio5 cirng1
 鬥爭	tou5 cing1
 鬥志	tio5 ci5
@@ -94640,7 +94740,7 @@ k	khek7{S非廣韻字}	1
 短銃	te3 ching5
 短銃	ter3 ching5
 短處	tuan3 chi5
-短處	tuan3 chIR
+短處	tuan3 chIR5
 短行	tuan3 hing6
 短褲	te3 khou5
 短褲	ter3 khou5
@@ -95392,7 +95492,7 @@ k	khek7{S非廣韻字}	1
 反輾轉	ping3 lin5 tirng3
 反正	huan3 cing5
 反症	huan3 cing5
-反之	huan3 ci
+反之	huan3 ci1
 反字典	pan3 ji6 tian3
 反字典	ping3 li6 tian3
 返潮	huan3 tiau2
@@ -95404,7 +95504,7 @@ k	khek7{S非廣韻字}	1
 犯規	huan4 kui1
 犯人	huan4 lang2
 犯嫌	huan4 hiam2
-犯著	huan4 tioh
+犯著	huan4 tioh8
 犯著鬼	huan6 tioh8 kui3
 犯罪	huan4 cue4
 氾濫	huan5 lam5
@@ -95536,7 +95636,7 @@ k	khek7{S非廣韻字}	1
 房柱	pang2 thiau4
 房租	pang2 cou1
 魴仔魚	hang1 a3 hi2
-仿的	hong3 e
+仿的	hong3 e2
 仿佛	hong3 hut7
 仿效	hong3 hau5
 仿仔	hong3 a3
@@ -95684,7 +95784,7 @@ k	khek7{S非廣韻字}	1
 啡仔	pi1 a3
 扉頁	hui1 iah8
 肥大	pui2 tua5
-肥的	pui2 e
+肥的	pui2 e2
 肥粉	pui2 hun3
 肥糞	pui2 pun5
 肥勒	pui2 lik8
@@ -95723,7 +95823,7 @@ k	khek7{S非廣韻字}	1
 分拆	pun1 thiah7
 分寸	hun1 chun5
 分擔	hun1 tam1
-分的	pun1 e
+分的	pun1 e2
 分隊	hun1 tui5
 分發	hun1 huat7
 分割	hun1 kuah7
@@ -96135,7 +96235,7 @@ k	khek7{S非廣韻字}	1
 否星	phaInn3 chinn1
 否性地	phai3 sing5 te5
 否性地	phaInn3 sing5 te6
-否則	hio3 cak
+否則	hio3 cak7
 否症頭	phai3 cing5 thau2
 否症頭	phaInn3 cing5 thau2
 否種	phai3 cing3
@@ -96477,7 +96577,7 @@ k	khek7{S非廣韻字}	1
 扞願	han2 guan6
 桿秤	kan1 chin5
 敢會	kann3 e4
-敢咧	kan3 leh
+敢咧	kan3 leh7
 敢伓	kann3 irm5
 敢伓是	kann3 m5 si4
 敢使	kam3 sai3
@@ -96526,7 +96626,7 @@ k	khek7{S非廣韻字}	1
 感性	kam3 sing5
 感應	kam3 ing5
 感召	kam3 tiau5
-感著	kam3 tioh
+感著	kam3 tioh8
 趕喉	kuann3 au2
 趕會赴	kuann3 e4 hu5
 趕會著	kuann3 e4 tioh8
@@ -96670,7 +96770,7 @@ k	khek7{S非廣韻字}	1
 高麗菜	ko1 le2 chai5
 高粱	kau1 liang2
 高粱	ko1 liang2
-高粱	ko1 liong
+高粱	ko1 liong2
 高粱	kou1 liong2
 高明	ko1 bing2
 高明	kou1 bing2
@@ -97063,7 +97163,7 @@ k	khek7{S非廣韻字}	1
 公道	kong1 tou4
 公德	kong1 tiak7
 公德	kong1 tik7
-公的	kang1 e
+公的	kang1 e2
 公費	kong1 hui5
 公分	kong1 hun1
 公憤	kong1 hun5
@@ -97414,7 +97514,7 @@ k	khek7{S非廣韻字}	1
 鴣黃	kou1 uinn2
 鮕鮘	kou1 tai1
 古冊	kou3 chaeh7
-古冊	kou3 cheh
+古冊	kou3 cheh7
 古代	kou3 tai5
 古典	kou3 tian3
 古董	kou3 tong3
@@ -97754,7 +97854,7 @@ k	khek7{S非廣韻字}	1
 龜溜鱉蛇	ku1 liu1 pih7 cua2
 龜溜峒崤	ku1 liu1 tang6 ngau2
 龜殼	ku1 khak7
-龜縮	kui1 siok
+龜縮	kui1 siok7
 龜蠅	ku1 sin2
 龜仔車	ku1 a3 chia1
 歸併	kui1 ping5
@@ -97772,7 +97872,7 @@ k	khek7{S非廣韻字}	1
 軌道	khui3 tou5
 軌跡	khui3 ciak7
 軌跡	khui3 cik7
-鬼舂著	kui3 cing1 tioh
+鬼舂著	kui3 cing1 tioh8
 鬼畜	kui3 thiok7
 鬼畜	kui3 thik7
 鬼畜米帝	kui3 thiok7 bi3 te5
@@ -97784,7 +97884,7 @@ k	khek7{S非廣韻字}	1
 鬼魂	kui3 hun2
 鬼箭草	kui3 cinn5 chau3
 鬼訣	kui3 kuat7
-鬼拍著	kui3 phah7 tioh
+鬼拍著	kui3 phah7 tioh8
 鬼水	kui3 cui3
 鬼祟	kui3 sui5
 鬼胎	kui3 thai1
@@ -97825,7 +97925,7 @@ k	khek7{S非廣韻字}	1
 滾嘩	kun3 hua4
 滾蛟龍	kun3 ka3 ling2
 滾絞	kun3 ka3
-滾開	kun3 khui
+滾開	kun3 khui1
 滾懍顫	kun3 lun3 cun5
 滾懍捘	kun3 lun3 cun4
 滾礲	kun3 ling5
@@ -98186,7 +98286,7 @@ k	khek7{S非廣韻字}	1
 海漲	hai3 tiong5
 海豬	hai3 ti1
 害蟲	hai5 thang2
-害處	hai5 chIR
+害處	hai5 chIR5
 害處	hai6 chi5
 害處	hai6 chu5
 害怕	hai5 phann5
@@ -98238,7 +98338,7 @@ k	khek7{S非廣韻字}	1
 涵養	ham2 iong3
 涵義	ham2 gi5
 寒潮	han2 tiau1
-寒冬	kuann2 lang
+寒冬	kuann2 lang1
 寒冬	kuann2 tang1
 寒風	han2 hong1
 寒假	han2 ka3
@@ -98254,9 +98354,9 @@ k	khek7{S非廣韻字}	1
 寒天	kuann2 thinn1
 寒心	han2 sim1
 寒暄	han2 suan1
-寒著	kuann2 tioh
-罕得	han3 lit
-罕得	han3 tit
+寒著	kuann2 tioh8
+罕得	han3 lit7
+罕得	han3 tit7
 罕見	han3 kian5
 罕見	han3 kinn5
 喊喝	han3 huah7
@@ -98375,7 +98475,7 @@ k	khek7{S非廣韻字}	1
 行棋	kiann2 ki2
 行氣	kiann2 khi5
 行情	hang2 cing2
-行去	kiann2 khi
+行去	kiann2 khi5
 行拳	kiann2 kun2
 行拳頭	kiann2 kun2 thau2
 行人	hing2 jin2
@@ -98464,7 +98564,7 @@ k	khek7{S非廣韻字}	1
 好才	ho3 cai2
 好彩頭	ho3 chai3 thau2
 好處	ho3 chi5
-好處	ho3 chIR
+好處	ho3 chIR5
 好處	ho3 chu5
 好膽	ho3 tann3
 好當當	ho3 tang1 tang1
@@ -98558,8 +98658,8 @@ k	khek7{S非廣韻字}	1
 好笑神	ho3 chio5 sin2
 好心	ho3 sim1
 好心行	ho3 sim1 hing5
-好樣的	ho3 ionn6 e
-好樣的	ho3 iunn5 e
+好樣的	ho3 ionn6 e2
+好樣的	ho3 iunn5 e2
 好影底	ho3 ing3 te3
 好運	ho3 un5
 好在	ho3 cai4
@@ -98598,7 +98698,7 @@ k	khek7{S非廣韻字}	1
 呵掰	hou1 pai1
 呵斥	ho1 thiak7
 呵斥	ho1 thik7
-呵人	hia1 lang
+呵人	hia1 lang2
 欱價	hap7 ke5
 欱價	hap7 kae5
 欱仙	hap7 sian1
@@ -98616,8 +98716,8 @@ k	khek7{S非廣韻字}	1
 喝鳥	huah7 ciau3
 喝拳	hua5 kun2
 喝拳	huah7 kun2
-喝人	hua5 lang
-喝人	huah7 lang
+喝人	hua5 lang2
+喝人	huah7 lang2
 喝仙	hua5 sian1
 喝仙	huah7 sian1
 喝吆號	huah7 iu3 ho4
@@ -98764,7 +98864,7 @@ k	khek7{S非廣韻字}	1
 盒仔	ah8 a3
 涸涸遨	khok8 khok8 go2
 涸仔	khok8 a3
-佫鬥的	koh7 tau5 e
+佫鬥的	koh7 tau5 e2
 佫嫁	koh7 ke5
 佫嫁	koh7 kae5
 佫講	koh7 kong3
@@ -98813,7 +98913,7 @@ k	khek7{S非廣韻字}	1
 橫幅	huinn2 hok7
 橫行	hirng2 hing2
 橫行	huaInn2 hing2
-橫行	huann2 hing
+橫行	huann2 hing2
 橫桁	huaInn2 kong2
 橫桀	huaInn2 keh8
 橫桀	huann2 kaeh8
@@ -98825,9 +98925,9 @@ k	khek7{S非廣韻字}	1
 橫龍	huann2 liong2
 橫逆	hing2 gik8
 橫逆	huaInn2 gik8
-橫人	huaInn2 lang
+橫人	huaInn2 lang2
 橫人	huann2 lang2
-橫人	huinn2 lang
+橫人	huinn2 lang2
 橫肉	huaInn2 bah7
 橫肉	huann2 bah7
 橫肉	huinn2 bah7
@@ -98943,7 +99043,7 @@ k	khek7{S非廣韻字}	1
 哄嚇	hang3 heh7
 哄嚇	hang3 hik7
 侯下	hau2 he6
-侯下	hau2 le
+侯下	hau2 le6
 喉滇	au2 tinn4
 喉蛾	au2 go2
 喉管	au2 kirng3
@@ -98957,7 +99057,7 @@ k	khek7{S非廣韻字}	1
 猴囝仔	kau2 gin3 a3
 猴帽	kau2 bo6
 猴弄	kau2 lang6
-猴去	kau2 khi
+猴去	kau2 khi5
 猴叟	kau2 so3
 猴損	kau2 sirng3
 猴損	kau2 suinn3
@@ -99024,7 +99124,7 @@ k	khek7{S非廣韻字}	1
 後塵	au6 tin2
 後塵	hio4 tin2
 後塵	hou6 tin2
-後的	hau6 e
+後的	hau6 e2
 後靪	au4 tinn1
 後靪	au6 tenn1
 後冬	au4 tang1
@@ -99055,8 +99155,8 @@ k	khek7{S非廣韻字}	1
 後人	hio4 lin2
 後人	hou6 jin2
 後人	hou6 lin2
-後日	au4 lit
-後日	au6 jit
+後日	au4 lit8
+後日	au6 jit8
 後山	au4 suann1
 後身	au6 sin1
 後生	hau4 sinn1
@@ -99324,8 +99424,8 @@ k	khek7{S非廣韻字}	1
 花婆	hua1 po2
 花婆	hue1 po2
 花婆喙	hue1 po2 chui5
-花去	hua1 khi
-花去	hua1 khIR
+花去	hua1 khi5
+花去	hua1 khIR5
 花蕊	hua1 lui3
 花蕊	hue1 lui3
 花色	hua1 sik7
@@ -99534,7 +99634,7 @@ k	khek7{S非廣韻字}	1
 換手	uann5 chiu3
 換算	huan5 suan5
 換算	uann5 sirng5
-換帖的	uann5 thiap7 e
+換帖的	uann5 thiap7 e2
 換帖兄弟	uann5 thiap7 hiann1 ti4
 換途	uann5 tou2
 換血	uann5 huih7
@@ -99815,17 +99915,17 @@ k	khek7{S非廣韻字}	1
 會餐	hue5 chan1
 會場	hue5 tiunn2
 會場	hue6 tionn2
-會出得	e4 chut7 lit
-會出得	e6 chut7 li
+會出得	e4 chut7 lit7
+會出得	e6 chut7 li4
 會當	e6 tang5
-會擋得	e4 tong5 tit
-會擋得	e6 tong5 li
+會擋得	e4 tong5 tit7
+會擋得	e6 tong5 li4
 會倒	e4 to3
 會得	e6 tit7
 會得過	e6 tit7 ke5
 會得過	e6 tit7 kue5
-會鬥得	e4 tau5 tit
-會鬥的	e6 tau5 e
+會鬥得	e4 tau5 tit7
+會鬥的	e6 tau5 e2
 會赴	e4 hu5
 會館	hue5 kuan3
 會過心	e4 ker5 sim1
@@ -99859,7 +99959,7 @@ k	khek7{S非廣韻字}	1
 會晤	hue5 ngou5
 會晤	hue6 gou6
 會曉	e4 hiau3
-會曉得	e6 hiau3 tit
+會曉得	e6 hiau3 tit7
 會演	hue5 ian3
 會議	hue5 gi5
 會用	e4 ing5
@@ -99870,14 +99970,14 @@ k	khek7{S非廣韻字}	1
 會戰	hue5 cian5
 會知	e6 cai1
 會知	e6 caInn1
-會值得	e4 tat8 lit
-會值得	e6 tat8 tit
+會值得	e4 tat8 lit7
+會值得	e6 tat8 tit7
 會挃	e4 tih8
 會挃	e6 ti2
 會做	e4 cue5
-會做得	e4 cue5 tit
+會做得	e4 cue5 tit7
 會做人	e4 cue5 lang2
-會做人	e6 co5 lang7
+會做人	e6 co5 lang22
 彙報	hue5 po5
 彙編	hue5 phian1
 彙編	hue6 pian1
@@ -99886,8 +99986,8 @@ k	khek7{S非廣韻字}	1
 慧眼	hui5 gan3
 諱言	hui5 gan2
 諱言	hui5 gian2
-穢人	e5 lang
-穢人	er5 lang
+穢人	e5 lang2
+穢人	er5 lang2
 穢世	e5 se5
 穢世	er5 ser5
 穢世	ue5 sue5
@@ -99898,7 +99998,7 @@ k	khek7{S非廣韻字}	1
 繪製	hue6 ci5
 昏暗	hun1 am5
 昏沉	hun1 tim2
-昏倒	hun1 to
+昏倒	hun1 to3
 昏花	hun1 hua1
 昏黃	hun1 hong2
 昏厥	hun1 kuat7
@@ -100241,7 +100341,7 @@ k	khek7{S非廣韻字}	1
 緝捕	chip7 pou2
 緝捕	cip7 pou2
 緝掠	cip7 liah8
-緝人	cip7 lang
+緝人	cip7 lang2
 緝私	chip7 su1
 緝私	cip7 sIR1
 機艙	ki1 chirng1
@@ -100369,8 +100469,8 @@ k	khek7{S非廣韻字}	1
 激屎	kik7 sai3
 激屎桶	kik7 sai3 thang3
 激霜	kik7 sirng1
-激死	kiak7 si
-激死	kik7 si
+激死	kiak7 si3
+激死	kik7 si3
 激素	kiak7 sou5
 激素	kik7 sou5
 激糖仔桶	kiak7 thirng2 a3 thang3
@@ -100765,7 +100865,7 @@ k	khek7{S非廣韻字}	1
 記憶力	ki5 ik7 lik8
 記載	ki5 cai5
 記者	ki5 cia3
-記著	ki5 tiau
+記著	ki5 tiau2
 徛擺	khia6 pai3
 徛壁	khia6 piah7
 徛厝	khia6 chu5
@@ -100827,7 +100927,7 @@ k	khek7{S非廣韻字}	1
 徛仔棧	kia6 a3 can5
 徛真徛現	kha4 cin1 kha4 hian5
 徛真徛現	khia6 cin1 khia6 hian6
-徛著	khia6 tiau
+徛著	khia6 tiau2
 祭祀	ce5 sIR5
 祭祀	ce5 su6
 祭壇	ce5 tuann2
@@ -101060,7 +101160,7 @@ k	khek7{S非廣韻字}	1
 夾插	kah7 chah7
 夾道	kiap7 to6
 夾道	kiap7 tou5
-夾的	kah7 e
+夾的	kah7 e2
 夾縫	kiap7 phang5
 夾攻	kiap7 kong1
 夾擊	kiap7 kiak7
@@ -101372,7 +101472,7 @@ k	khek7{S非廣韻字}	1
 剪鼠	cian3 chIR3
 剪貼	cian3 thiap7
 剪頭	cian3 thau2
-剪頭的	cian3 thau2 e
+剪頭的	cian3 thau2 e2
 剪影	cian3 iann3
 剪影	cian3 ing3
 剪魚	cian3 hi2
@@ -101673,7 +101773,7 @@ k	khek7{S非廣韻字}	1
 降價	kang5 kae5
 降臨	kang5 lim2
 降落	kang5 loh8
-降生	kang5 sing
+降生	kang5 sing1
 降生	kang5 sirng1
 降水沬	kang5 cui3 bi6
 降順	hang2 sun5
@@ -101938,9 +102038,9 @@ k	khek7{S非廣韻字}	1
 角色	kak7 siak7
 角色	kak7 sik7
 角石	kak7 cioh8
-角勢	kak7 si
+角勢	kak7 si5
 角糖	kak7 thirng2
-角頭	kak7 thau
+角頭	kak7 thau2
 角魚	kak7 hi2
 角仔	kak7 a3
 角逐	kak7 tiok8
@@ -102044,7 +102144,7 @@ k	khek7{S非廣韻字}	1
 攪擾	kiau3 jiau3
 攪擾	kiau3 liau3
 攪唆	kiau3 so1
-叫大吼的	kio5 tua6 hau3 e
+叫大吼的	kio5 tua6 hau3 e2
 叫喊	kiau5 han3
 叫喚	kio5 huan5
 叫精神	kio5 cing1 sin2
@@ -102171,7 +102271,7 @@ k	khek7{S非廣韻字}	1
 接力	ciap7 lik8
 接力	cih7 lat8
 接連	ciap7 lian2
-接面的	cih7 bin6 e
+接面的	cih7 bin6 e2
 接納	ciap7 lap8
 接洽	ciap7 hiap8
 接神	cih7 sin2
@@ -102189,7 +102289,7 @@ k	khek7{S非廣韻字}	1
 接枝	ciap7 ki1
 接重	cih7 tang6
 接助	ciap7 cou6
-接著	ciap7 tioh
+接著	ciap7 tioh8
 接祖	cih7 cou3
 階層	kai1 can2
 階段	kai1 tuann5
@@ -102405,8 +102505,8 @@ k	khek7{S非廣韻字}	1
 解圍	kai3 ui2
 解做	e4 cue5
 解做	ere6 cue5
-解做得	e4 cue5 tit
-解做得	ere6 cue5 tit
+解做得	e4 cue5 tit7
+解做得	ere6 cue5 tit7
 解做人	e4 cue5 lang2
 介面	ciap7 khau3
 介紹	kai5 siau5
@@ -102431,7 +102531,7 @@ k	khek7{S非廣韻字}	1
 借徛	cioh7 kha4
 借徛	cioh7 khia6
 借鑒	cioh7 kam5
-借人	cioh7 lang
+借人	cioh7 lang2
 借問	cioh7 mirng5
 借用	cioh7 ing5
 借用	cioh7 iong6
@@ -102784,7 +102884,7 @@ k	khek7{S非廣韻字}	1
 驚恐	king1 khiong3
 驚了	kiann1 liau3
 驚某	kiann1 bou3
-驚人	kiann1 lang
+驚人	kiann1 lang2
 驚人	king1 jin2
 驚人	king1 lin2
 驚懾	kiann1 niah7
@@ -102802,7 +102902,7 @@ k	khek7{S非廣韻字}	1
 驚險	king1 hiam3
 驚心	kiann1 sim1
 驚醒	kiann1 chenn3
-驚醒	kiann1 chinn
+驚醒	kiann1 chinn3
 驚醒	king1 sing3
 驚訝	king1 ga5
 驚訝	king1 gae6
@@ -102814,7 +102914,7 @@ k	khek7{S非廣韻字}	1
 驚蟄	king1 tip8
 驚蟄	kinn1 tit8
 驚蟄	keng1 tek8
-驚著	kiann1 tioh
+驚著	kiann1 tioh8
 井盤	cinn3 puann2
 景況	king3 hong3
 景況	king3 khong3
@@ -102966,7 +103066,7 @@ k	khek7{S非廣韻字}	1
 九重餜	kau3 ting2 ker3
 久長	ku3 tirng2
 久長步	ku3 tirng2 pou5
-久來	ku3 lai
+久來	ku3 lai2
 久仰	kiu3 giang3
 久仰	kiu3 giong3
 久遠	kiu3 uan3
@@ -103208,7 +103308,7 @@ k	khek7{S非廣韻字}	1
 距離	kIR4 li2
 距離	ku6 li2
 跙板	chu6 pan3
-跙倒	chu4 to
+跙倒	chu4 to3
 跙尻川石	chu6 kha1 chirng1 chioh8
 聚餐	ci6 chan1
 聚餐	cu4 chan1
@@ -103593,7 +103693,6 @@ k	khek7{S非廣韻字}	1
 看會起	khuann5 e4 khi3
 看家	khuann5 khe1
 看家	khuann5 khae1
-看見	khuann5 ki
 看見	khuann5 kinn5
 看骹路	khuann5 kha1 lou6
 看口	khuann5 khau3
@@ -103642,7 +103741,7 @@ k	khek7{S非廣韻字}	1
 糠秕	khirng1 pi3
 扛板歸	kirng1 pan3 kui1
 扛閣	kirng1 koh7
-扛轎的	kirng1 kio5 e
+扛轎的	kirng1 kio5 e2
 摃槌	kong5 thui2
 摃繳	kong5 kiau3
 摃破碗花	kong5 phua5 uann3 hue1
@@ -103741,7 +103840,7 @@ k	khek7{S非廣韻字}	1
 靠勢	khou5 se5
 靠手	kho5 chiu3
 靠倚	kho5 ua3
-靠著	kho5 tioh
+靠著	kho5 tioh8
 苛刻	kho1 khik7
 苛刻	khou1 khiak7
 苛求	kho1 kiu2
@@ -104074,7 +104173,7 @@ k	khek7{S非廣韻字}	1
 口語	khau3 gi3
 口語	khau3 gu3
 口語	khio3 gIR3
-口仔	khau3 a
+口仔	khau3 a3
 口灶	khau3 cau5
 扣除	khau5 ti2
 扣除	khau5 tu2
@@ -104127,8 +104226,8 @@ k	khek7{S非廣韻字}	1
 苦草	khou3 chau3
 苦楚	khou3 chou3
 苦處	khou3 chi5
-苦處	khou3 chIR
-苦處	khou3 chu
+苦處	khou3 chIR5
+苦處	khou3 chu5
 苦旦	khou3 tuann5
 苦毒	khou3 tok8
 苦厄	khou3 eh7
@@ -104614,7 +104713,7 @@ k	khek7{S非廣韻字}	1
 勞資	lou2 cIR1
 勞作	lo2 cok7
 勞作	lou2 cok7
-磱著	lau3 tioh
+磱著	lau3 tioh8
 癆傷	lo2 siang1
 醪膏	lo2 ko1
 醪膏塗	lo2 lo1 thou2
@@ -104659,7 +104758,7 @@ k	khek7{S非廣韻字}	1
 老大人	lau4 tua5 lang2
 老大爺	lau4 tua5 ia2
 老倒□	lau6 to5 thue6
-老的	lau4 e
+老的	lau4 e2
 老癲柁	lau6 thian1 thoh8
 老調	lau3 tiau5
 老爹	lo3 tia1
@@ -104667,7 +104766,7 @@ k	khek7{S非廣韻字}	1
 老鶚	la4 hioh8
 老番癲	lau4 huan1 tian1
 老風騷	lau4 hong1 so1
-老咯	lau4 lou
+老咯	lau4 lou0
 老姑婆	lau4 kou1 po2
 老古板	lau4 kou3 pan3
 老古舊	lau4 kou3 ku5
@@ -104714,8 +104813,8 @@ k	khek7{S非廣韻字}	1
 老破兵	lau6 phua5 ping1
 老破匹	lau4 phua5 phiat7
 老牽仔	lau6 khaInn1 ann3
-老去	lau4 khIR
-老去	lau6 khi
+老去	lau4 khIR5
+老去	lau6 khi5
 老嬈	lau4 hiau2
 老人家	lau4 lang2 ke1
 老人家	lau6 lang2 kae1
@@ -104738,8 +104837,8 @@ k	khek7{S非廣韻字}	1
 老鼠奶	niau3 chu3 ni1
 老鼠仔肉	lou3 chIR3 a3 hiak8
 老鼠仔冤	niau3 chu3 a3 uan1
-老歲仔	lau4 her5 a3
-老歲仔	lau6 he5 a3
+老歲仔	lau4 hEr5 a3
+老歲仔	lau6 hue5 a3
 老太婆	lau4 thai5 po2
 老太太	lau4 thai5 thai5
 老套頭	lau4 tho5 thau2
@@ -104790,14 +104889,14 @@ k	khek7{S非廣韻字}	1
 勒索	lik8 sik7
 勒索	lik8 sok7
 鰳仔	lat8 a3
-了啊	liau3 a
+了啊	liau3 a0
 了本	liau3 pirng3
 了本	liau3 pun3
 了不得	liau3 put7 tiak7
 了不得	liau3 put7 tik7
 了不起	liau3 put7 khi3
 了丁	liau3 ding1
-了咯	liau3 lou
+了咯	liau3 lou0
 了哥王	liau3 ko1 ong2
 了工	liau3 kang1
 了後	liau3 au4
@@ -104807,8 +104906,8 @@ k	khek7{S非廣韻字}	1
 了離	liau3 li5
 了力	liau3 lat8
 了鳥	liau3 ciau3
-了去	liau3 khi
-了去	liau3 khIR
+了去	liau3 khi5
+了去	liau3 khIR5
 了卻	liau3 khiok7
 了然	liau3 jian2
 了然	liau3 lian2
@@ -104869,7 +104968,7 @@ k	khek7{S非廣韻字}	1
 冷遇	ling3 gi6
 冷遇	ling3 gu5
 冷戰	ling3 cian5
-冷著	ling3 tioh
+冷著	ling3 tioh8
 厘戥	li2 ting3
 厘厘仔	li2 li2 a3
 厘仔甲	li2 a3 kah7
@@ -105690,8 +105789,8 @@ k	khek7{S非廣韻字}	1
 六月天	lak8 gueh8 thinn1
 隆胸	liong2 hing1
 隆重	liong2 tiong4
-𨀁開	ling5 khui
-𨀁開	liong5 khui
+𨀁開	ling5 khui1
+𨀁開	liong5 khui1
 𨀁拄嵩	liong5 tu3 siong5
 𨀁拄直	liong5 tu3 tit8
 龍船	ling2 cun2
@@ -105749,7 +105848,7 @@ k	khek7{S非廣韻字}	1
 攏慫	long4 song4
 攏趖	long3 so2
 攏頭	lang3 thau2
-攏頭的	lang3 thau2 e
+攏頭的	lang3 thau2 e2
 攏無	long3 bo2
 攏用	long3 ing5
 攏著	long3 tioh8
@@ -105863,7 +105962,7 @@ k	khek7{S非廣韻字}	1
 路站	lou6 can6
 路丈	lou6 tirng6
 路窀	lou6 tuinn6
-漉個束個	lok7 kosok7 ko
+漉個束個	lok7 ko5 sok7 ko5
 漉栱	lok7 kong3
 漉漉	lok7 lok7
 漉膿	lok7 long2
@@ -106088,10 +106187,10 @@ k	khek7{S非廣韻字}	1
 落蚶	lau5 ham1
 落後	lok8 hio4
 落後	lok8 hou6
-落後年	loh7 au6 ni
-落後日	loh7 au6 jit
-落後日	loh7 au6 lit
-落後日	loh8 aulit
+落後年	loh7 au6 ni2
+落後日	loh7 au6 jit8
+落後日	loh7 au6 lit8
+落後日	loh7 au4 lit8
 落戶	lok8 hou4
 落花生	lua6 sing1
 落花生	luah8 a3 sing1
@@ -106122,7 +106221,7 @@ k	khek7{S非廣韻字}	1
 落款	loh8 khuann3
 落款	lok8 khuan3
 落括	loh8 kuah7
-落來	loh lai
+落來	loh8 lai2
 落濫	loh8 lam5
 落力	loh8 lat8
 落臉	lak7 lian3
@@ -106137,10 +106236,10 @@ k	khek7{S非廣韻字}	1
 落氣	lau5 khi5
 落氣	lau5 khui5
 落氣話	lau5 khui5 ue5
-落前年	loh7 cun2 ni
+落前年	loh7 cun2 ni2
 落殼	lak7 khak7
-落去	loh khi
-落去	loh khIR
+落去	loh8 khi5
+落去	loh8 khIR5
 落去	lak7 khi5
 落去	lak7 khIR5
 落群	loh8 kun2
@@ -106202,8 +106301,8 @@ k	khek7{S非廣韻字}	1
 落字	lak7 li5
 落字	lau5 ji6
 落字	lau5 li5
-落昨日	loh7 coh8 jit
-落昨日	loh7 coh8 lit
+落昨日	loh7 coh8 jit8
+落昨日	loh7 coh8 lit8
 絡箍	loh8 kou1
 絡索	loh8 soh7
 絡繹	lok8 iak8
@@ -106731,9 +106830,9 @@ k	khek7{S非廣韻字}	1
 貿然	bio5 lian2
 貿然	mou6 jian2
 貿然	mou6 lian2
-貿人	bau6 lang
-貿人	bauh8 lang
-貿人	pauh8 lang
+貿人	bau6 lang2
+貿人	bauh8 lang2
+貿人	pauh8 lang2
 貿穡路	bau6 sit7 lou6
 貿穡路	pauh8 sit7 lou5
 貿頭	bau6 thau2
@@ -107374,7 +107473,7 @@ k	khek7{S非廣韻字}	1
 名模	bing2 bou2
 名模	bing2 mou2
 名目	bing2 bok8
-名片	bing2 phian
+名片	bing2 phian5
 名片	mia2 phinn5
 名人	bing2 jin2
 名人	bing2 lin2
@@ -107467,8 +107566,8 @@ k	khek7{S非廣韻字}	1
 暝拍日	mi2 phah7 lit8
 暝日	mae2 jit8
 暝日	mi2 lit8
-暝時	mae2 si
-暝時	mi2 si
+暝時	mae2 si2
+暝時	mi2 si2
 暝頭	mae2 thau2
 暝頭	mi2 thau2
 暝尾	mae2 bue3
@@ -107552,7 +107651,7 @@ k	khek7{S非廣韻字}	1
 魔爪	mou2 liau3
 抹壁	buah7 piah7
 抹刀	buah7 to1
-抹人	buah7 lang
+抹人	buah7 lang2
 抹殺	buah7 suah7
 抹殺	buat8 sat7
 抹紗	buah7 sae1
@@ -107598,8 +107697,8 @@ k	khek7{S非廣韻字}	1
 瞙壁鬼	moh7 piah7 kui3
 瞙揣	mouh7 cher6
 瞙揣	moh7 cher6
-瞙無路	mouh bo2 lou6
-瞙無路	moh bo2 lou6
+瞙無路	mouh7 bo2 lou6
+瞙無路	moh7 bo2 lou6
 墨□仔	bak8 chinn6 a3
 墨寶	bak8 po3
 墨寶	bik8 po3
@@ -107672,8 +107771,8 @@ k	khek7{S非廣韻字}	1
 母本	bu3 pun3
 母叢	bo3 cang2
 母叢	bu3 cang2
-母的	bo3 e
-母的	bu3 e
+母的	bo3 e2
+母的	bu3 e2
 母雞	bo3 ke1
 母雞	bu3 kue1
 母金	bu3 kim1
@@ -107700,7 +107799,7 @@ k	khek7{S非廣韻字}	1
 母語	bio3 gIR3
 母語	bo3 gi3
 母語	bu3 gu3
-母仔	bu3 a
+母仔	bu3 a3
 母豬	bo3 ti1
 母豬	bu3 ti1
 母豬	bu3 tIR1
@@ -107711,7 +107810,7 @@ k	khek7{S非廣韻字}	1
 拇指	bu3 ci3
 姆媽	m3 ma3
 姆婆	m3 po2
-姆仔	m3 a
+姆仔	m3 a3
 木版	bok8 pan3
 木材	bok8 cai2
 木耳	bok8 ji3
@@ -107893,7 +107992,8 @@ k	khek7{S非廣韻字}	1
 那邊	na5 pian1
 那個	na5 ko5
 那裡	na5 li3
-那麼	na5 mou
+那麼	na5 mo3
+那麼	na5 mo4
 那時	na5 si2
 那些	na5 sia1
 那些	na6 sa1
@@ -107976,7 +108076,7 @@ k	khek7{S非廣韻字}	1
 南北	lam2 pak7
 南北交	lam2 pak7 kau1
 南北郊	lam2 pak7 kau1
-南邊	lam2 pinn
+南邊	lam2 pinn1
 南部	lam2 pou4
 南風天	lam2 hong1 thinn1
 南風天	lam2 huang1 thinn1
@@ -107984,13 +108084,13 @@ k	khek7{S非廣韻字}	1
 南瓜	lam2 kue1
 南管	lam2 kuan3
 南面	lam2 bin5
-南爿	lam2 ping
+南爿	lam2 ping2
 南普陀寺	lam2 phou3 to2 si5
 南曲	lam2 khiak7
 南曲	lam2 khik7
 南山寺	lam2 san1 si5
-南勢	lam2 si
-南頭	lam2 thau
+南勢	lam2 si5
+南頭	lam2 thau2
 南洋	lam2 ionn2
 南洋	lam2 iunn2
 南音	lam2 im1
@@ -108136,7 +108236,7 @@ k	khek7{S非廣韻字}	1
 泥土	ni2 thou3
 泥丸	ni2 uan2
 霓虹燈	ge2 hong2 ting1
-你們	ni3 bun
+你們	ni3 bun2
 你儂	ling3
 擬定	gi3 ting5
 擬訂	gi3 ting5
@@ -108378,7 +108478,7 @@ k	khek7{S非廣韻字}	1
 凝思	ging2 su1
 凝血	ging2 hueh7
 凝血	ging2 huih7
-凝著	ging2 tioh
+凝著	ging2 tioh8
 檸檬	ling2 bong2
 牛扁擔	gu2 pin1 tann1
 牛擔	gu2 tann1
@@ -108599,7 +108699,7 @@ k	khek7{S非廣韻字}	1
 毆打	ou1 tann3
 謳歌	io1 kou1
 謳歌	ou1 ko1
-偶的	gio2 e
+偶的	gio2 e2
 偶爾	gio3 ni3
 偶爾	ngou3 jinn3
 偶爾	ngou3 ni3
@@ -108619,7 +108719,7 @@ k	khek7{S非廣韻字}	1
 嘔吐	io3 thou5
 嘔吐	ou3 thou5
 嘔興	au3 hing5
-嘔傴	au3 u
+嘔傴	au3 u3
 爬行	pa2 hing2
 爬酒毛	pae2 ciu3 mou2
 爬龍船	pe2 ling2 cun2
@@ -108694,7 +108794,7 @@ k	khek7{S非廣韻字}	1
 拍劫	phah7 kiap7
 拍結球	phah7 kat7 kiu2
 拍金仔	phah7 kim1 a3
-拍金仔的	phah7 kim1 a3 e
+拍金仔的	phah7 kim1 a3 e2
 拍尻川	phah7 kha1 chirng1
 拍尻川	phah7 kha1 chuinn1
 拍空	phah7 khang1
@@ -108727,7 +108827,7 @@ k	khek7{S非廣韻字}	1
 拍饒	phah7 jiau2
 拍饒	phah7 liau2
 拍攝	phah7 liap7
-拍石的	phah7 cioh8 e
+拍石的	phah7 cioh8 e2
 拍石師	phah7 cioh8 sai1
 拍拾	phah7 khioh7
 拍手	phah7 chiu3
@@ -109462,7 +109562,7 @@ k	khek7{S非廣韻字}	1
 頻繁	pin2 huan2
 頻率	pin2 lut8
 頻頻謗謗	pin2 pin2 pong5 pong5
-嚬著	phin2 tioh
+嚬著	phin2 tioh8
 品嘗	phin3 siang3
 品嘗	phin3 siong3
 品德	phin3 tiak7
@@ -109648,7 +109748,7 @@ k	khek7{S非廣韻字}	1
 婆姐母	po2 cia3 bu3
 婆羅門佛塔	po2 lo2 bun2 put8 thah7
 婆婆	po2 po2
-婆仔	po2 a
+婆仔	po2 a3
 迫害	piak7 hai5
 迫害	pik7 hai6
 迫近	piak7 kun4
@@ -109949,10 +110049,10 @@ k	khek7{S非廣韻字}	1
 騎牆	khi2 chiang2
 騎牆	khi2 chiong2
 騎牆	ki2 chiong2
-乞的	khit7 e
+乞的	khit7 e2
 乞火	khat7 her3
 乞求	khit7 kiu2
-乞人	khit7 lang
+乞人	khit7 lang2
 乞食	khit7 ciah8
 乞食骨	khit7 ciah8 kut7
 乞食碗草	khit7 ciah8 uann3 chau3
@@ -110025,8 +110125,7 @@ k	khek7{S非廣韻字}	1
 起歁	khi3 kham3
 起空	khi3 khang1
 起狂	khi3 kong2
-起來	khi ai
-起來	khi3 lai
+起來	khi3 lai2
 起雷	khi3 lui2
 起楞	khi3 ling6
 起楞仔症	khi3 ling6 a3 cing5
@@ -110045,8 +110144,8 @@ k	khek7{S非廣韻字}	1
 起去	khae3 khIR5
 起去	khae3 i5
 起去	khae3 IR5
-起去	khi3 khi5
-起去	khi3 khIR5
+起去	khi53 khi5
+起去	khi53 khIR5
 起散	khi3 san5
 起山	khi3 suann1
 起身	khi3 sin1
@@ -110094,7 +110193,6 @@ k	khek7{S非廣韻字}	1
 迄帶	hit7 te5
 迄帶	hit7 ter5
 迄當時	hit7 tang1 si2
-迄個	hih7 e
 迄個	hit7 e2
 迄個	hit7 ge2
 迄股	hit7 kou3
@@ -110116,8 +110214,8 @@ k	khek7{S非廣韻字}	1
 汽艇	khi5 thing3
 汽油	khi5 iu2
 契阿兄	khue5 a1 hiann1
-契的	khe5 e
-契的	khue5 e
+契的	khe2 e2
+契的	khue2 e2
 契弟	khue5 te6
 契合	khe5 hap8
 契機	khe5 ki1
@@ -110265,7 +110363,7 @@ k	khek7{S非廣韻字}	1
 牽師仔	khan1 sai1 a3
 牽拾	khan1 khioh7
 牽手	khan1 chiu3
-牽手的	khan1 chiu3 e
+牽手的	khan1 chiu3 e2
 牽絲	khan1 si1
 牽藤	khan1 tin2
 牽頭	khan1 thau2
@@ -110348,7 +110446,7 @@ k	khek7{S非廣韻字}	1
 前某	can2 bou3
 前某	cing2 bou3
 前年	cing2 ni2
-前年	cun2 ni
+前年	cun2 ni2
 前期	cian2 ki2
 前人	can2 lang2
 前人	cian2 jin2
@@ -110401,7 +110499,7 @@ k	khek7{S非廣韻字}	1
 鉗仔	khinn2 a3
 鉗制	khiam2 ce5
 鉗制	khiam2 ci5
-墘頭	kinn2 thau
+墘頭	kinn2 thau2
 潛藏	ciam2 cong2
 潛伏	ciam2 hok8
 潛力	ciam2 liak8
@@ -110468,7 +110566,7 @@ k	khek7{S非廣韻字}	1
 欠數	khiam5 siau5
 欠𧮙	khiam5 choh7
 芡實	khiam5 sit8
-倩的	chiann5 e
+倩的	chiann5 e2
 歉采	khiam3 chai3
 歉疚	khiam5 kiu5
 歉收	khiam5 siu1
@@ -110565,7 +110663,7 @@ k	khek7{S非廣韻字}	1
 搶救	chionn3 kiu5
 搶救	chiunn3 kiu5
 搶人	chionn3 lang2
-搶人	chiunn3 lang
+搶人	chiunn3 lang2
 搶事	chiang5 su1
 搶事	chiong3 sIR5
 搶事	chiong3 su6
@@ -110587,8 +110685,8 @@ k	khek7{S非廣韻字}	1
 敲打	khau1 tann3
 敲更	kha5 kenn1
 敲更	kha5 kinn1
-敲更的	kha5 kenn1 e
-敲更的	kha5 kĩ1 e
+敲更的	kha5 kenn1 e2
+敲更的	kha5 kĩ1 e2
 敲鼓	kha5 kou3
 敲涸	kha5 khok8
 敲頭殼	kha5 thau2 khak7
@@ -110607,7 +110705,7 @@ k	khek7{S非廣韻字}	1
 喬吊	khiau2 tiau5
 喬靠	khiau2 kho5
 喬苦	khiau2 khou3
-喬人	khiau2 lang
+喬人	khiau2 lang2
 喬裝	kiau2 cong1
 僑胞	kiau2 pau1
 僑匯	kiau2 hue5
@@ -110978,7 +111076,7 @@ k	khek7{S非廣韻字}	1
 情人	cing2 jin2
 情人	cing2 lin2
 情勢	cing2 se5
-情勢	cing2 si1
+情勢	cing2 si5
 情書	cing2 si1
 情書	cing2 su1
 情書	cing2 cIR1
@@ -111152,8 +111250,8 @@ k	khek7{S非廣韻字}	1
 𧺤筋	khiu2 kun1
 𧺤毛	khiu2 mirng2
 𧺤毛	khiu2 mou2
-𧺤毛的	khiu2 mirng2 e
-𧺤毛的	khiu2 mou2 e
+𧺤毛的	khiu2 mirng2 e2
+𧺤毛的	khiu2 mou2 e2
 抾柴	khioh7 cha2
 抾柴	khioh7 ca2
 抾乇件	khioh7 nou3 kiann4
@@ -111329,7 +111427,7 @@ k	khek7{S非廣韻字}	1
 泉水	cuann2 cui3
 泉眼	cuan2 gan3
 泉源	cuan2 guan2
-泉州海交館	cuan2 ciu1 hai3 kau1 kuan
+泉州海交館	cuan2 ciu1 hai3 kau1 kuan3
 拳擊	kun2 kiak7
 拳擊	kun2 kik7
 拳術	kun2 sut8
@@ -111442,9 +111540,9 @@ k	khek7{S非廣韻字}	1
 燃火	hiann2 he3
 燃火	hiann2 her3
 燃火	hiann2 hue3
-燃火的	hiann2 he3 e
-燃火的	hiann2 her3 e
-燃火的	hiann2 hue3 e
+燃火的	hiann2 he3 e2
+燃火的	hiann2 her3 e2
+燃火的	hiann2 hue3 e2
 燃料	jian2 liau6
 燃料	lian2 liau5
 燃燒	jian2 sio1
@@ -111569,7 +111667,7 @@ k	khek7{S非廣韻字}	1
 熱燥	liat8 so5
 熱衷	jiat8 tiong1
 熱衷	liat8 tiong1
-熱著	luah8 tio
+熱著	luah8 tioh8
 人才	jin2 cai2
 人才	lang2 cai2
 人才	lin2 cai2
@@ -111614,8 +111712,8 @@ k	khek7{S非廣韻字}	1
 人倫	lin2 lun2
 人馬	lang2 be3
 人馬	lin2 ma3
-人們	jin2 bun
-人們	lin2 bun
+人們	jin2 bun2
+人們	lin2 bun2
 人面	lang2 bin5
 人民	jin2 bin2
 人民	lin2 bin2
@@ -111800,8 +111898,8 @@ k	khek7{S非廣韻字}	1
 日日春	lit8 lit8 chun1
 日食	jit8 sit8
 日食	lit8 sit8
-日時	jit8 si
-日時	lit8 si
+日時	jit8 si2
+日時	lit8 si2
 日頭	jit8 thau2
 日頭	lit8 thau2
 日頭大	jit8 thau2 tua6
@@ -112483,7 +112581,7 @@ k	khek7{S非廣韻字}	1
 紗籠	sae1 long2
 紗帽	se1 bo5
 紗帽	sae1 bo6
-紗衫仔	sae1 sann1 a
+紗衫仔	sae1 sann1 a3
 紗篗仔	sae1 ak8 ga3
 紗仔胛仔	se1 a3 kah7 a3
 紗仔胛仔	sae1 a3 kah7 a3
@@ -112518,8 +112616,8 @@ k	khek7{S非廣韻字}	1
 煞拍起來	sat7 phah7 khi3 lai2
 煞拍去	sat7 phah7 khIR5
 煞氣	suah7 khui5
-煞去	suah7 khi
-煞去	suah7 khIR
+煞去	suah7 khi5
+煞去	suah7 khIR5
 煞事	suah7 su6
 煞是	sua5 si4
 煞手	suah7 chiu3
@@ -113023,7 +113121,7 @@ k	khek7{S非廣韻字}	1
 燒火	sio1 he3
 燒火	sio1 her3
 燒火	sio1 hue3
-燒火的	sio1 he3 e
+燒火的	sio1 he3 e2
 燒金	sio1 kim1
 燒酒	sio1 ciu3
 燒烤	sio1 kho3
@@ -113052,7 +113150,7 @@ k	khek7{S非廣韻字}	1
 少將	siau5 ciong5
 少量	cio3 liang6
 少年	siau5 lian2
-少年的	siau5 lian2 e
+少年的	siau5 lian2 e2
 少年家	siau5 lian2 ke1
 少年家	siau5 lian2 kae1
 少女	siau5 li3
@@ -113156,7 +113254,7 @@ k	khek7{S非廣韻字}	1
 攝取	siap7 chu3
 攝食	siap7 sit8
 攝屎	liap7 sai3
-攝氏	liap7 si
+攝氏	liap7 si4
 攝手路	liap7 chiu3 lou6
 攝影	liap7 iann3
 攝政	liap7 cing5
@@ -113267,7 +113365,7 @@ k	khek7{S非廣韻字}	1
 神交	sin2 kau1
 神姐	sin2 cia3
 神經	sin2 king1
-神經的	sin2 king1 e
+神經的	sin2 king1 e2
 神經氣	sin2 king1 khui5
 神龕	sin2 kham1
 神籃	sin2 na2
@@ -113280,8 +113378,8 @@ k	khek7{S非廣韻字}	1
 神氣	sin2 khi5
 神情	sin2 cing2
 神曲	sin2 khak7
-神去	sin2 khi
-神去	sin2 khIR
+神去	sin2 khi5
+神去	sin2 khIR5
 神色	sin2 siak7
 神色	sin2 sik7
 神聖	sin2 sing5
@@ -113403,7 +113501,7 @@ k	khek7{S非廣韻字}	1
 生脆	chinn1 cher5
 生存	sing1 cun2
 生存	sirng1 cun2
-生的	senn1 e
+生的	senn1 e2
 生地	sing1 te6
 生地	sirng1 te5
 生疔	senn1 ting1
@@ -113543,8 +113641,7 @@ k	khek7{S非廣韻字}	1
 生涯	sirng1 gai2
 生意	sing1 i5
 生意	sirng1 i5
-生嬰仔	senn1 enn1ann
-生嬰仔	sinn1 ẽ1 a3
+生嬰仔	senn1 e1 a3
 生硬	chenn1 ngae6
 生硬	chinn1 ngi4
 生油	sing1 iu2
@@ -113649,7 +113746,7 @@ k	khek7{S非廣韻字}	1
 㾪塍	san3 chan2
 㾪赤	san3 chiah7
 㾪抽	san3 thiu1
-㾪的	san3 e
+㾪的	san3 e2
 㾪扶	san3 phou2
 㾪猴	san3 kau2
 㾪話	san3 ua6
@@ -113742,7 +113839,7 @@ k	khek7{S非廣韻字}	1
 失陪	sit7 pue2
 失氣	sit7 khui5
 失去	sit7 khi5
-失去	sit7 khIR
+失去	sit7 khIR5
 失散	sit7 san5
 失散	sit7 suann5
 失色	sit7 siak7
@@ -114630,7 +114727,7 @@ k	khek7{S非廣韻字}	1
 手跡	chiu3 jiah7
 手跡	chiu3 liah7
 手跡	chiu3 ciak7
-手跡	chiu3 cik
+手跡	chiu3 cik7
 手夾仔	chui3 kiap7 a3
 手腳	chiu3 kha1
 手轎	chiu3 kio5
@@ -115068,7 +115165,7 @@ k	khek7{S非廣韻字}	1
 述評	sut8 phing2
 述說	sut8 suat7
 述職	sut8 cit7
-捒倒	sak7 to
+捒倒	sak7 to3
 術籃	sut8 na2
 術佬仔土地公	sut8 lau3 a3 thou3 lik8 kong1
 術語	sut8 gi3
@@ -115164,8 +115261,8 @@ k	khek7{S非廣韻字}	1
 衰運	sue1 un5
 衰𪷰	sue1 siau2
 摔打	suai1 tann3
-摔倒	sak7 to
-摔倒	siak7 to
+摔倒	sak7 to3
+摔倒	siak7 to3
 摔後鬥	sut7 au6 tau3
 摔後炮	sut7 au4 phau5
 摔櫳仔子	siak7 long2 a3 ci3
@@ -115228,8 +115325,8 @@ k	khek7{S非廣韻字}	1
 雙生	sang1 sinn1
 雙生	siang1 senn1
 雙生	siang1 sinn1
-雙生的	sang1 sinn1 e
-雙生的	siang1 sinn1 e
+雙生的	sang1 sinn1 e2
+雙生的	siang1 sinn1 e2
 雙胎	siang1 the1
 雙頭	sang1 thau2
 雙頭	siang1 thau2
@@ -115451,7 +115548,7 @@ k	khek7{S非廣韻字}	1
 順月	sun5 gErh8
 順月	sun6 geh8
 順月	sun6 gueh8
-順著	sun5 tioh
+順著	sun5 tioh8
 瞬間	sun5 kan1
 瞬息	sun5 siak7
 瞬息	sun5 sik7
@@ -115459,7 +115556,7 @@ k	khek7{S非廣韻字}	1
 說白	seh7 peh8
 說白	sErh7 peh8
 說白	suat7 piak8
-說白	suat7 pik
+說白	suat7 pik8
 說不定	suat7 put7 ting6
 說唱	sErh7 chiunn5
 說唱	suat7 chiong5
@@ -115620,12 +115717,12 @@ k	khek7{S非廣韻字}	1
 死敵	si3 tik8
 死地	si3 te6
 死地	si3 tue5
-死度人	si3 thou4 lang
+死度人	si3 thou4 lang2
 死對揭	si3 tui5 khiat8
 死骨頭	si3 kut7 thau2
 死龜厾	si3 ku1 thuh8
 死寒	si3 kuann2
-死互人	si3 hou6 lang
+死互人	si3 hou6 lang2
 死活	si3 uah8
 死貨	si3 hue5
 死囝仔撐	si3 kin3 a3 thenn1
@@ -115948,7 +116045,7 @@ k	khek7{S非廣韻字}	1
 算額	sirng5 giah8
 算額	suinn5 giah8
 算計	suan5 ke5
-算了	suan5 liau
+算了	suan5 liau0
 算論	sirng5 lun6
 算命	sirng5 mia5
 算命	suinn5 mia6
@@ -115995,7 +116092,7 @@ k	khek7{S非廣韻字}	1
 隨意	sui2 i5
 隨員	sui2 uan2
 隨在	sui2 cai4
-隨著	sui2 tioh
+隨著	sui2 tioh8
 遂心	sui5 sim1
 碎米斑	chui5 bi3 pan1
 歲聲	he5 siann1
@@ -116065,7 +116162,7 @@ k	khek7{S非廣韻字}	1
 所屬	sou3 siok8
 所謂	se3 ui6
 所謂	sou3 ui5
-所以	sou3 i
+所以	sou3 i4
 所有	sou3 iu3
 所有	sou3 u4
 所有所無	se3 u6 se3 bo2
@@ -116091,13 +116188,13 @@ k	khek7{S非廣韻字}	1
 鎖定	so3 ting5
 鎖鏈	so3 lian5
 鎖匙	so3 si2
-他們	thann1 bun
+他們	thann1 bun2
 他人	thann1 jin2
 他人	thann1 lin2
 他日	thann1 jit8
 他日	thann1 lit8
-它們	thann1 bun
-她們	thann1 bun
+它們	thann1 bun2
+她們	thann1 bun2
 趿膽	sannh7 tann3
 趿風	sannh7 hong1
 趿風	sannh7 huang1
@@ -116221,9 +116318,9 @@ k	khek7{S非廣韻字}	1
 胎膜	thai1 mouh8
 胎盤	thai2 puann2
 胎衣	thai1 i1
-坮來	tai2 lai
-坮去	tai2 khi
-坮去	tai2 khIR
+坮來	tai2 lai2
+坮去	tai2 khi5
+坮去	tai2 khIR5
 抬價	thai1 kae5
 抬價	thai2 ke5
 抬舉	thai1 kIR3
@@ -116343,7 +116440,7 @@ k	khek7{S非廣韻字}	1
 唐人衫	tirng2 lang2 sann1
 唐山	tirng2 suann1
 唐裝	tong2 cong1
-堂的	tong2 e
+堂的	tong2 e2
 堂皇	tong2 hong2
 搪瓷	thirng5 hui2
 搪瓷	tong2 cIR2
@@ -116623,7 +116720,7 @@ k	khek7{S非廣韻字}	1
 體重	the3 tang4
 剃頭	thih7 thau2
 剃頭刀	thih7 thau2 to1
-剃頭的	thih7 thau2 e
+剃頭的	thih7 thau2 e2
 剃頭店	thih7 thau2 tiam5
 倜儻	thiak7 thong3
 倜儻	thik7 thong3
@@ -116930,7 +117027,7 @@ k	khek7{S非廣韻字}	1
 聽話	thiann1 ua6
 聽話	thiann1 ue5
 聽喙	thiann1 chui5
-聽見	thiann1 kinn
+聽見	thiann1 kinn5
 聽講	thiann1 kang3
 聽講	thiann1 kong3
 聽力	thiann1 lat8
@@ -117182,7 +117279,7 @@ k	khek7{S非廣韻字}	1
 統計	thong3 ke5
 統離離	thong3 li6 li6
 統攏	thong3 long3
-統去	thong3 ki
+統去	thong3 khIR5
 統攝	thong3 liap7
 統攝	thong3 siap7
 統是	thong3 si4
@@ -117228,8 +117325,8 @@ k	khek7{S非廣韻字}	1
 偷竊	thou1 chiap7
 偷情	thau1 cing2
 偷䀐	thau1 siam1
-偷生的	thau1 senn1 e
-偷生的	thau1 sinn1 e
+偷生的	thau1 senn1 e2
+偷生的	thau1 sinn1 e2
 偷生囝	thau1 senn1 kiann3
 偷食	thau1 ciah8
 偷食步	thau1 ciah8 pou5
@@ -117280,13 +117377,13 @@ k	khek7{S非廣韻字}	1
 頭到尾	thau2 kau5 be3
 頭到尾	thau2 kau5 ber3
 頭到尾	thau2 kau5 bue3
-頭底來尾底去	thau2 ti lai2 ber3 ti khIR5
+頭底來尾底去	thau2 ti3 lai2 ber3 ti3 khIR5
 頭對	thau2 tui5
 頭額	thau2 hiah8
 頭額痕	thau2 hiah8 hun2
 頭麩	thau2 phou1
-頭哥	thau2 ko
-頭哥	thiu2 ko
+頭哥	thau2 ko1
+頭哥	thiu2 ko1
 頭遘	thau2 kau5
 頭遘尾	thau2 kau5 be3
 頭遘尾	thau2 kau5 ber3
@@ -117412,7 +117509,7 @@ k	khek7{S非廣韻字}	1
 透紙	tou5 cua3
 透種	thau5 cing3
 透晝	thau5 tau5
-透著	tou5 tioh
+透著	tou5 tioh8
 透字	tou5 ji2
 凸肚	thut8 tou3
 凸額	thut8 hiah8
@@ -117761,8 +117858,8 @@ k	khek7{S非廣韻字}	1
 褪皮	thuinn5 phue2
 褪殼	thirng5 khak7
 褪殼	thuinn5 khak7
-褪人	thirng5 lang
-褪人	thuinn5 lang
+褪人	thirng5 lang2
+褪人	thuinn5 lang2
 褪孝	thirng5 ha5
 褪孝	thuinn5 ha5
 褪鞋	thirng5 ue2
@@ -117797,7 +117894,7 @@ k	khek7{S非廣韻字}	1
 托故	thok7 kou5
 托空	thuh7 khang1
 托夢	thok7 bang6
-托破	thuh7 phua
+托破	thuh7 phua5
 托手尾力	thuh7 chiu3 be3 lat8
 托運	thok7 un5
 拖纏	thua1 tinn2
@@ -117879,7 +117976,7 @@ k	khek7{S非廣韻字}	1
 挖掘	uat7 kut8
 挖空	iah7 khang1
 挖苦	ua1 khou3
-哇塞	ua3 sai
+哇塞	ua3 sai3
 蛙泳	ua1 ing3
 窪地	ua1 te6
 窪地	ua1 tue5
@@ -118085,7 +118182,7 @@ k	khek7{S非廣韻字}	1
 碗杮	uann3 phe5
 碗杮	uann3 pher5
 碗杮	uann3 phue5
-碗糕	uann3 ko
+碗糕	uann3 ko1
 碗糕餜	uann3 ko1 ke3
 碗糕餜	uann3 ko1 ker3
 碗糕餜	uann3 ko1 kue3
@@ -118157,7 +118254,7 @@ k	khek7{S非廣韻字}	1
 王八	ong2 pat7
 王朝	ong2 tiau2
 王法	ong2 huat7
-王哥柳哥	ong2 koliu3 ko
+王哥柳哥	ong2 ko1 liu3 ko1
 王冠	ong2 kuan1
 王國	ong2 kok7
 王后	ong2 hio4
@@ -118383,8 +118480,8 @@ k	khek7{S非廣韻字}	1
 尾隨	be3 sui2
 尾隨	ber3 sui2
 尾隨	bue3 sui2
-尾頭	be3 thau
-尾頭	ber3 thau
+尾頭	be3 thau2
+尾頭	ber3 thau2
 尾牙	be3 ge2
 尾牙	ber3 ge2
 尾牙	bue3 gae2
@@ -118405,8 +118502,8 @@ k	khek7{S非廣韻字}	1
 委任	ui3 jim6
 委任	ui3 lim5
 委身	ui3 sin1
-委瑣	hui3 so
-委瑣	ui3 so5
+委瑣	hui3 so3
+委瑣	ui3 so3
 委託	ui3 thok7
 委婉	ui3 uan3
 委員	ui3 uan2
@@ -118644,8 +118741,8 @@ k	khek7{S非廣韻字}	1
 我間乃	gua3 kai5 nai3
 我間乃	gua3 kaInn5 nai3
 我苦	gua3 khou3
-我囉	gua3 lo
-我們	ngou3 bun
+我囉	gua3 lo0
+我們	ngou3 bun2
 我儂	guan3
 我儂	gun3
 沃粗	ak7 chou1
@@ -118952,8 +119049,8 @@ k	khek7{S非廣韻字}	1
 無氣	bo2 khui5
 無棄嫌	bo2 khi5 hiam2
 無窮	bu2 kiong2
-無去	bo2 khi
-無去	bo2 khIR
+無去	bo2 khi5
+無去	bo2 khIR5
 無人色	bo2 lang2 siak7
 無人色	bo2 lang2 sik7
 無人緣	bo2 lang2 ian2
@@ -119028,8 +119125,8 @@ k	khek7{S非廣韻字}	1
 無線電	bu2 suann5 tian5
 無獻哼	bo2 hinn5 haInn1
 無想俗	bo2 siunn4 sioh8
-無想著	bo2 sionn6 tioh
-無想著	bo2 siunn4 tioh
+無想著	bo2 sionn6 tioh8
+無想著	bo2 siunn4 tioh8
 無向無看	bo2 ng5 bo2 khuann5
 無像款	bo2 chionn6 khuan3
 無像款	bo2 chiunn1 khuan3
@@ -119266,14 +119363,14 @@ k	khek7{S非廣韻字}	1
 西曆	se1 lik8
 西南侉	sai1 lam2 o5
 西南侉	sai1 lam2 khua5
-西爿	sai1 ping
-西爿	sai1 puinn
+西爿	sai1 ping2
+西爿	sai1 puinn2
 西式	se1 siak7
 西式	se1 sik7
 西式	se1 sit7
-西勢	sai1 si
+西勢	sai1 si5
 西天	se1 thian1
-西頭	sai1 thau
+西頭	sai1 thau2
 西學	se1 hak8
 西洋	sai1 ionn2
 西洋	sai1 iunn2
@@ -119340,7 +119437,7 @@ k	khek7{S非廣韻字}	1
 翕甌	hip7 au1
 翕熱	hip7 juah8
 翕熱	hip7 luah8
-翕死	hip7 si
+翕死	hip7 si3
 翕鐵	hiap7 thih7
 翕像	hip7 siang6
 翕像	hip7 siong4
@@ -120065,7 +120162,7 @@ k	khek7{S非廣韻字}	1
 獻詞	hian5 su2
 獻技	hian5 ki1
 獻計	hian5 ke5
-獻開	hian5 khui
+獻開	hian5 khui1
 獻禮	hian5 le3
 獻領	hian5 nia3
 獻路錢	hian5 lou5 cinn2
@@ -120148,7 +120245,7 @@ k	khek7{S非廣韻字}	1
 相共	sa1 kang5
 相共	sio1 kang6
 相共	sie1 kang6
-相關	siang1 kuan1 g
+相關	sIang1 kuan1
 相關	siong1 kuan1
 相好	siang1 ho3
 相好	siong1 ho3
@@ -120196,8 +120293,8 @@ k	khek7{S非廣韻字}	1
 相貌	siang5 mau6
 相貌	siong5 bau5
 相貌	siong5 mau6
-相命的	siang5 mia6 e
-相命的	siong5 mia5 e
+相命的	siang5 mia6 e2
+相命的	siong5 mia5 e2
 相拍	sa1 phah7
 相拍	sio1 phah7
 相棄嫌	sa1 khi5 hiam2
@@ -120335,7 +120432,7 @@ k	khek7{S非廣韻字}	1
 鄉村	hionn1 chuan1
 鄉村	hiunn1 chirng1
 鄉里	hionn1 li3
-鄉里	hiunn1 li
+鄉里	hiunn1 li3
 鄉里老大	hiunn1 li3 lau4 tua5
 鄉親	hiang1 chin1
 鄉親	hiong1 chin1
@@ -120401,7 +120498,7 @@ k	khek7{S非廣韻字}	1
 想心想肝	siunn4 sim1 siunn4 kuann1
 想著	sionn6 tioh8
 饗弄	siann2 lang6
-饗人	siann2 lang
+饗人	siann2 lang2
 饗恿	siann2 sing6
 響徹	hiang3 tiat7
 響徹	hiong3 thiat7
@@ -120429,7 +120526,7 @@ k	khek7{S非廣韻字}	1
 向陽	hiong5 iong2
 向隅	hiang5 gi2
 向隅	hiong5 gu2
-向著	hiang5 tioh
+向著	hiang5 tioh8
 巷街	hang6 kue1
 巷廊	hang5 long2
 巷路	hang5 lou5
@@ -120541,7 +120638,7 @@ k	khek7{S非廣韻字}	1
 宵禁	siau1 kim5
 痟查某	siau3 ca1 bou3
 痟出	siau3 chut7
-痟的	siau3 e
+痟的	siau3 e2
 痟風	siau3 hong1
 痟風	siau3 huang1
 痟公子	siau3 kong1 cIR3
@@ -120706,7 +120803,7 @@ k	khek7{S非廣韻字}	1
 小子	siau3 cu3
 小組	sio3 cou3
 曉得	hiau3 tik7
-曉得	hiau3 tit
+曉得	hiau3 tit7
 孝呆	hau5 tai1
 孝服	ha5 hok8
 孝服	hau5 hok8
@@ -121170,7 +121267,6 @@ k	khek7{S非廣韻字}	1
 刑場	hing2 tionn2
 刑場	hing2 tiunn2
 刑罰	hing2 huat8
-刑罰	hing2 huat8 g
 刑法	hing2 huat7
 刑具	hing2 ki6
 刑具	hing2 ku5
@@ -121321,7 +121417,7 @@ k	khek7{S非廣韻字}	1
 休克	hiu1 khik7
 休憩	hiu1 khe5
 休憩	hiu1 khi5
-休去	hiu1 khi
+休去	hiu1 khi5
 休息	hiu1 siak7
 休息	hiu1 sik7
 休息	hiu1 sit7
@@ -121470,7 +121566,7 @@ k	khek7{S非廣韻字}	1
 序跋	sIR4 puat8
 序跋	su6 puat8
 序大	si5 tua5
-序大的	si5 tua5 e
+序大的	si5 tua5 e2
 序大人	si5 tua5 lang2
 序列	si6 liat8
 序列	sIR4 liat8
@@ -121603,7 +121699,7 @@ k	khek7{S非廣韻字}	1
 眩頭眩腦	hin2 thau2 hin2 lo3
 眩忘忘	hin2 bong5 bong5
 眩暈	hian2 un5
-眩著	hin2 tioh
+眩著	hin2 tioh8
 渲染	suan1 jiam3
 渲染	suan1 liam3
 渲染	suan5 liam3
@@ -121838,10 +121934,10 @@ k	khek7{S非廣韻字}	1
 馴熟	sun2 siok8
 馴養	sun2 iang3
 馴養	sun2 iong3
-遜前年	sun5 cun2 ni
+遜前年	sun5 cun2 ni2
 遜色	sun5 siak7
 遜色	sun5 sik7
-遜昨日	sun5 coh8 lit
+遜昨日	sun5 coh8 lit8
 丫鬟	a1 huan2
 丫頭	a1 thau2
 押後	ah7 au4
@@ -122134,7 +122230,7 @@ k	khek7{S非廣韻字}	1
 眼下	gan3 ha4
 眼下	gan3 hae6
 眼珠	gan3 cu1
-偃倒	ian3 to
+偃倒	ian3 to3
 演變	ian3 pian5
 演唱	ian3 chionn5
 演唱	ian3 chiunn5
@@ -122196,7 +122292,7 @@ k	khek7{S非廣韻字}	1
 央告	iong1 kou5
 央求	iang1 kiu2
 央求	iong1 kiu2
-央人	iang1 lang
+央人	iang1 lang2
 央視	iang1 si6
 央視	iong1 si5
 央托	iang1 thok7
@@ -122281,7 +122377,7 @@ k	khek7{S非廣韻字}	1
 陽性	iong2 sing5
 揚名	iang2 bing2
 揚名	iang2 mia2
-揚名	iong2 bing
+揚名	iong2 bing2
 揚名	iong2 mia2
 揚棄	iang2 khi5
 揚棄	iong2 khi5
@@ -122303,7 +122399,7 @@ k	khek7{S非廣韻字}	1
 颺颺飛	iann4 iann4 per1
 颺颺飛	iann6 iann6 pe1
 颺颺飛	iann6 iann6 pue1
-卬去	gang6 khi
+卬去	gang6 khi5
 仰賴	giang3 nai6
 仰賴	giong3 lai5
 仰慕	giang3 bou6
@@ -122321,8 +122417,8 @@ k	khek7{S非廣韻字}	1
 氧氣	iong3 khi5
 養成	iang3 sing2
 養成	iong3 sing2
-養的	ionn3 e
-養的	iunn3 e
+養的	ionn3 e2
+養的	iunn3 e2
 養分	iang3 hun6
 養分	iong3 hun5
 養活	ionn3 uah8
@@ -122391,8 +122487,8 @@ k	khek7{S非廣韻字}	1
 腰子病	io1 ci3 pinn5
 邀奶	io1 ling1
 邀奶	io1 ni1
-邀奶的	io1 ling1 e
-邀奶的	io1 ni1 e
+邀奶的	io1 ling1 e2
+邀奶的	io1 ni1 e2
 邀奶母	io1 lin1 bu3
 邀飼	io1 chi6
 堯疑	giau2 gi2
@@ -122451,9 +122547,9 @@ k	khek7{S非廣韻字}	1
 要緊	iau5 kin3
 要領	iau5 ling3
 要命	iau5 bing5
-要伓	beh7 m
-要伓	bErh7 m
-要伓	bueh7 m
+要伓	beh7 irm6
+要伓	bErh7 irm6
+要伓	bueh7 irm6
 要求	iau1 kiu2
 要人	iau5 jin2
 要人	iau5 lin2
@@ -122476,7 +122572,7 @@ k	khek7{S非廣韻字}	1
 要旨	iau5 ci3
 要挃	beh7 tinnh8
 要挃	bErh7 tih8
-要准伓	beh7 cun3 m6
+要准伓	beh7 cun3 irm6
 獟獟動	hiaunnh8 hiaunnh8 tang4
 藥餅	ioh8 piann3
 藥材	ioh8 cai2
@@ -122569,7 +122665,7 @@ k	khek7{S非廣韻字}	1
 夜來香	ia5 lai2 hiong1
 夜來香	ia6 lai2 hiang1
 夜裡	ia5 lai4
-夜裡	ia6 li
+夜裡	ia6 li3
 夜盲	ia5 bong2
 夜幕	ia5 mou5
 夜幕	ia6 bou6
@@ -122634,7 +122730,7 @@ k	khek7{S非廣韻字}	1
 一腹火	cit8 pak7 he3
 一腹火	cit8 pak7 her3
 一腹火	cit8 pak7 hue3
-一個的	it7 ko2 e
+一個的	it7 ko2 e2
 一共	it7 kiong5
 一寡	cit8 kua3
 一寡	cit8 kuann3
@@ -122684,8 +122780,8 @@ k	khek7{S非廣韻字}	1
 一千一百	cit8 ching1 cit8 paeh7
 一切	it7 che5
 一切	it7 chiat7
-一日	cit jit
-一日	cit lit
+一日	cit jit8
+一日	cit lit8
 一身	it7 sin1
 一身	cit8 sin1
 一生	it7 sing1
@@ -122696,7 +122792,7 @@ k	khek7{S非廣韻字}	1
 一絲仔	cit8 si1 a3
 一四界	cit8 si5 ke5
 一四界	cit8 si5 kue5
-一條根	it7 tiau2 kun
+一條根	it7 tiau2 kErn1
 一同	it7 tong2
 一頭	cit8 thau2
 一透雨	cit8 thau5 hou4
@@ -122927,7 +123023,7 @@ k	khek7{S非廣韻字}	1
 益蟲	iak7 thang2
 益蟲	ik7 thang2
 益蟲	ik7 thiong2
-益處	iak7 chIR
+益處	iak7 chIR5
 益處	ik7 chi5
 益處	ik7 chu5
 益閣	iah7 koh7
@@ -123008,7 +123104,7 @@ k	khek7{S非廣韻字}	1
 毅然	ge5 lian2
 毅然	ge6 jian2
 熠飯	ip7 pirng5
-憶著	it7 tioh
+憶著	it7 tioh8
 翼仔	sit8 a3
 藝人	ge2 jin2
 藝人	ge2 lin2
@@ -123407,7 +123503,7 @@ k	khek7{S非廣韻字}	1
 硬𫖖	ngae6 tenn5
 硬𫖖	ngi4 tinn5
 䤝仔	giang1 a3
-媵人	thin5 lang
+媵人	thin5 lang2
 應奧	inn5 aunn3
 應變	ing5 pian5
 應承	ing5 sing2
@@ -123646,8 +123742,8 @@ k	khek7{S非廣韻字}	1
 怣囝仔	gong6 gin3 a3
 怣力	gong5 lat8
 怣錢	gong5 cinn2
-怣去	gong5 khIR
-怣去	gong6 khi
+怣去	gong5 khIR5
+怣去	gong6 khi5
 怣鯊	gong6 sua1
 怣神	gong6 sin1
 怣宋	gong6 song5
@@ -123714,8 +123810,8 @@ k	khek7{S非廣韻字}	1
 游泳	iu2 ing3
 友愛	iu3 ai5
 友邦	iu3 pang1
-友的	iu3 e
-友哥	iu3 ko
+友的	iu3 e2
+友哥	iu3 ko1
 友好	iu3 ho3
 友情	iu3 cing2
 友人	iu3 jin2
@@ -123735,8 +123831,8 @@ k	khek7{S非廣韻字}	1
 有擋頭	u4 tong5 thau2
 有的	iu3 tiak7
 有的	iu3 tik7
-有的	u4 e
-有的無的	u4 e bo2 e
+有的	u4 e2
+有的無的	u4 e2 bo2 e2
 有底	u4 tue3
 有底	u6 te3
 有底置	u6 tue3 ti5
@@ -123917,9 +124013,9 @@ k	khek7{S非廣韻字}	1
 迂拙	u1 cuat7
 於是	IR1 si4
 於是	u1 si6
-淤積	i1 cik7
+淤積	IR1 cik7
 淤積	IR1 ciak7
-淤積	u1 cik
+淤積	u1 cik7
 淤泥	i1 ni2
 淤泥	IR1 ni2
 淤泥	u1 ni2
@@ -124304,7 +124400,7 @@ k	khek7{S非廣韻字}	1
 鬰傷	ut7 siong1
 鬰酸	ut7 sirng1
 鬰雨	ut7 hou4
-鬰著	ut7 tioh
+鬰著	ut7 tioh8
 鬰卒	ut7 cut7
 鬱積	ut7 cik7
 鬱積	ut7 cit7
@@ -124626,8 +124722,8 @@ k	khek7{S非廣韻字}	1
 允諾	in3 jiak8
 允諾	un3 liok8
 允親	un3 chin1
-允人	in3 lang
-允人	un3 lang
+允人	in3 lang2
+允人	un3 lang2
 允准	un3 cun3
 隕落	un3 lok8
 隕滅	un3 biat8
@@ -124754,7 +124850,7 @@ k	khek7{S非廣韻字}	1
 在內	cai4 lai4
 在潑	chai6 phuat7
 在錢	cai4 cinn2
-在去	cai6 khi
+在去	cai6 khi5
 在人	cai6 lang2
 在社	cai6 sia6
 在世	cai4 se5
@@ -124867,7 +124963,7 @@ k	khek7{S非廣韻字}	1
 早飯	ca3 puinn6
 早紅仔	ca3 ang2 a3
 早慢	ca3 ban6
-早年所	ca3 ni sou
+早年所	ca3 ni2 sou3
 早期	ca3 ki2
 早起	ca3 khi3
 早前	ca3 cing2
@@ -124882,7 +124978,7 @@ k	khek7{S非廣韻字}	1
 早晏	ca3 uann5
 早已	ca3 i3
 早勻	ca3 un2
-早著	ca3 loh
+早著	ca3 toh8
 棗紅	co3 ang2
 灶額	cau5 hiah8
 灶額頭	cau5 hiah8 thau2
@@ -125082,9 +125178,9 @@ k	khek7{S非廣韻字}	1
 展風龜	tian3 hong1 ku1
 展緩	tian3 uan6
 展皇	tian3 hong2
-展開	thi3 kui
-展開	thian3 khui
-展開	thinn3 kui
+展開	thi3 kui1
+展開	thian3 khui1
+展開	thinn3 kui1
 展開	tian3 khui1
 展開	tian3 khai1
 展康	tian3 khang1
@@ -125198,7 +125294,7 @@ k	khek7{S非廣韻字}	1
 張門面	tionn1 mui2 bin6
 張門面	tiunn1 mirng2 bin6
 張腔	tionn1 chionn1
-張聲	tiunn1 siann
+張聲	tiunn1 siann1
 張死	tionn1 si3
 張提	tionn1 ti2
 張提	tiunn1 ti2
@@ -125491,7 +125587,7 @@ k	khek7{S非廣韻字}	1
 貞節	cing1 ciat7
 貞潔	cing1 kiat7
 真誠	cin1 sing2
-真的	cin1 e
+真的	cin1 e2
 真諦	cin1 te5
 真跡	cin1 ciak7
 真跡	cin1 cik7
@@ -126176,7 +126272,7 @@ k	khek7{S非廣韻字}	1
 致意	ti5 i5
 致蔭	ti5 im5
 致重	ti5 tiong4
-致著	ti5 tioh
+致著	ti5 tioh8
 秩序	tiat8 si6
 秩序	tiat8 sIR4
 秩序	tiat8 su6
@@ -126723,7 +126819,7 @@ k	khek7{S非廣韻字}	1
 拄數	tu3 siau5
 拄要	tu3 beh7
 拄要	tu3 bErh7
-拄著	tu3 tioh
+拄著	tu3 tioh8
 拄撞	tu3 tirng5
 拄撞	tu3 cing6
 煮菜	ci3 chai5
@@ -127010,8 +127106,8 @@ k	khek7{S非廣韻字}	1
 轉交	cuan3 kau1
 轉接	cuan3 ciap7
 轉筋	cuan3 kun1
-轉來	tirng3 lai
-轉來	tun3 lai
+轉來	tirng3 lai2
+轉來	tun3 lai2
 轉流	tirng3 lau2
 轉流	tuinn3 lau2
 轉輪	tirng3 lun2
@@ -127033,9 +127129,9 @@ k	khek7{S非廣韻字}	1
 轉氣	tuinn3 khui5
 轉青	tirng3 chinn1
 轉青	tuinn3 chenn1
-轉去	tirng3 khi
-轉去	tIRng3 khIR
-轉去	tun3 khi
+轉去	tirng3 khi5
+轉去	tirng3 khIR5
+轉去	tun3 khi5
 轉讓	cuan3 niu5
 轉色	tirng3 sik7
 轉色	tuinn3 sik7
@@ -127129,7 +127225,7 @@ k	khek7{S非廣韻字}	1
 撞球	tong6 kiu2
 撞針	tong5 cam1
 撞針	tong6 ciam1
-撞著	tirng5 tioh
+撞著	tirng5 tioh8
 追捕	tui1 pou2
 追查	tui1 ca1
 追查	tui1 cae1
@@ -127180,8 +127276,8 @@ k	khek7{S非廣韻字}	1
 准許	cun3 hIR3
 准許	cun3 hu3
 准𤖯	cun3 pue1
-准去	cun3 khi
-准去	cun3 khIR
+准去	cun3 khi5
+准去	cun3 khIR5
 准若	cun3 na4
 准數	cun3 siau5
 准算	cun3 sirng5
@@ -127603,7 +127699,7 @@ k	khek7{S非廣韻字}	1
 總則	cong3 cak7
 總則	cong3 cik7
 總帳	cong3 cang5
-總之	cong3 ci
+總之	cong3 ci1
 總著	cong3 tioh8
 粽箬	cang5 hioh8
 縱隊	chiong5 tui5
@@ -127675,7 +127771,7 @@ k	khek7{S非廣韻字}	1
 走失	cau3 sit7
 走手	cau3 ciu3
 走水	cau3 cui3
-走水的	cau3 cui3 e
+走水的	cau3 cui3 e2
 走私	cau3 sIR1
 走私	cau3 su1
 走跳	cau3 thiau5
@@ -127829,8 +127925,8 @@ k	khek7{S非廣韻字}	1
 昨暝	ca6 mae2
 昨日	ca4 lit8
 昨日	ca6 lit8 ca6 jit8
-昨日	coh8 jit
-昨日	coh8 lit
+昨日	coh8 jit8
+昨日	coh8 lit8
 昨仔日	ca6 a1 jit8
 𧮙粗喙	choh7 chou1 chui5
 𧮙姦撟	choh7 kan5 kiau6
@@ -127881,7 +127977,7 @@ k	khek7{S非廣韻字}	1
 作勢	cok7 si5
 作祟	cok7 sui5
 作態	cok7 thai5
-作塗的	coh7 thou2 e
+作塗的	coh7 thou2 e2
 作為	cok7 ui2
 作文	cok7 bun2
 作物	cok7 but8
@@ -127928,9 +128024,9 @@ k	khek7{S非廣韻字}	1
 坐落	cer4 loh8
 坐落	co6 lok8
 坐落	cou4 lok8
-坐落去	ce6 loh khi
-坐落去	cer4 loh khIR
-坐落去	che6 loh khi
+坐落去	ce6 loh8 khi5
+坐落去	cer4 loh8 khIR5
+坐落去	che6 loh8 khi5
 坐盆	ce6 phun2
 坐盆	cer4 phun2
 坐伓著	ce6 m6 tioh8
@@ -128043,8 +128139,8 @@ k	khek7{S非廣韻字}	1
 做袂遘	cue5 bere6 kau5
 做夢	co5 bang6
 做夢	cue5 bang5
-做木的	co5 bak8 e
-做木的	cue5 bak8 e
+做木的	co5 bak8 e2
+做木的	cue5 bak8 e2
 做七日	co5 chit7 jit8
 做七日	cue5 chit7 lit8
 做謙	cue5 khiam1
@@ -128052,8 +128148,8 @@ k	khek7{S非廣韻字}	1
 做譴損	cue5 khian5 sirng3
 做親情	co5 chin1 ciann2
 做親情	cue5 chin1 ciann2
-做人	co5 lang
-做人	cue5 lang
+做人	co5 lang2
+做人	cue5 lang2
 做汝	co5 li3
 做汝	cue5 li3
 做汝	cue5 lIR3
@@ -128062,9 +128158,9 @@ k	khek7{S非廣韻字}	1
 做生理	co5 sing1 li3
 做生理	cue5 sing1 li3
 做生理	cue5 sirng1 li3
-做生理的	co5 sing1 li3 e
-做生理的	cue5 sing1 li3 e
-做生理的	cue5 sirng1 li3 e
+做生理的	co5 sing1 li3 e2
+做生理的	cue5 sing1 li3 e2
+做生理的	cue5 sirng1 li3 e2
 做生日忌	co5 senn1 jit8 ki6
 做聲	co5 siann1
 做聲	cue5 siann1
@@ -128074,9 +128170,9 @@ k	khek7{S非廣韻字}	1
 做頭	co5 thau2
 做頭	cue5 thau2
 做頭陣	cue5 thau2 tin6
-做塗的	co5 thou2 e
-做塗的	coh7 thou2 e
-做塗的	cue5 thou2 e
+做塗的	co5 thou2 e2
+做塗的	coh7 thou2 e2
+做塗的	cue5 thou2 e2
 做旬	co5 sun2
 做牙	co5 gae2
 做牙	cue5 ge2
@@ -128121,12 +128217,12 @@ k	khek7{S非廣韻字}	1
 𣍐按算	bue4 an5 sirng5
 𣍐比並	be6 pi3 ping6
 𣍐比並	bue4 pi3 ping4
-𣍐出得	be6 chut7 li
-𣍐亍得	bue6 tu5 tit
+𣍐出得	be6 chut7 li4
+𣍐亍得	bue6 tu5 tit7
 𣍐當	be6 tang5
 𣍐當	bue6 tang5
-𣍐擋得	be6 tong5 li
-𣍐擋得	bue6 tong5 tit
+𣍐擋得	be6 tong5 li4
+𣍐擋得	bue6 tong5 tit7
 𣍐得	be6 tit7
 𣍐得	bue6 tit7
 𣍐得過	be6 tit7 kue5
@@ -128141,8 +128237,8 @@ k	khek7{S非廣韻字}	1
 𣍐否	bue4 phai3
 𣍐否	bue6 phaInn3
 𣍐顧得	be6 kou5
-𣍐顧得	bue6 kou5 tit
-𣍐怪得	be6 kuai5 li
+𣍐顧得	bue6 kou5 tit7
+𣍐怪得	be6 kuai5 li4
 𣍐怪得	bue6 kue5 tit7
 𣍐過心	be6 kue5 sim1
 𣍐過心	bue4 ker5 sim1
@@ -128170,9 +128266,9 @@ k	khek7{S非廣韻字}	1
 𣍐看破	be6 khuann5 phua5
 𣍐看破	bue4 khuann5 phua5
 𣍐看相	be6 khuann5 sionn5
-𣍐磕得	be6 kap8 e
-𣍐克得	be6 khat7 li
-𣍐克得	bue6 khat7 tit
+𣍐磕得	be6 kap8 e0
+𣍐克得	be6 khat7 li4
+𣍐克得	bue6 khat7 tit7
 𣍐克根	bue4 khat7 kun1
 𣍐來	be6 lai2
 𣍐來	bue4 lai2
@@ -128182,10 +128278,10 @@ k	khek7{S非廣韻字}	1
 𣍐了離	bue4 liau3 li5
 𣍐了是	be6 liau3 si6
 𣍐了是	bue6 liau3 si6
-𣍐離得	be6 li6 lit
+𣍐離得	be6 li6 lit7
 𣍐涼	bue6 liang2
-𣍐免得	bue6 bian3 tit
-𣍐摸得	be6 bong1 e
+𣍐免得	bue6 bian3 tit7
+𣍐摸得	be6 bong1 e0
 𣍐秋凊	be6 chiu1 chin5
 𣍐秋凊	bue4 chiu1 chin5
 𣍐煞	be6 suah7
@@ -128203,14 +128299,14 @@ k	khek7{S非廣韻字}	1
 𣍐收山	be6 siu1 suann1
 𣍐收山	bue6 siu1 suann1
 𣍐輸成	bue6 su1 siann2
-𣍐飼的	be6 chi6 e
+𣍐飼的	be6 chi6 e2
 𣍐通敨	be6 thong1 thau3
 𣍐通敨	bue4 thong1 thau3
 𣍐無藝	be6 bo2 gae6
 𣍐孝孤	be6 hau5 kou1
 𣍐孝孤	bue6 hau5 kou1
 𣍐用	bue4 ing5
-𣍐用得	be6 iong6 li
+𣍐用得	be6 iong6 li4
 𣍐用無	bue4 ing5 bo2
 𣍐直	be6 tit8
 𣍐直	bue4 tit8
@@ -128229,7 +128325,7 @@ k	khek7{S非廣韻字}	1
 𣍐走閃	be6 cau3 siam3
 𣍐走閃	bue4 cau3 siam3
 𣍐做	bue4 cue5
-𣍐做得	bue6 cue5 tit
+𣍐做得	bue6 cue5 tit7
 𣍐做人	be6 co5 lang2
 𣍐做人	bue4 cue5 lang2
 𣍐做無	bue4 cue5 bo2
@@ -128288,7 +128384,7 @@ k	khek7{S非廣韻字}	1
 𫝛途	siang2 tou2
 𫝛柱	sang2 thiau4
 𫝛柱	siang2 thiau6
-武達媲絮朵	Bu4 Tat8 Phe5 SIR5 Ter3
+武達媲絮朵	bu4 tat8 phe5 sIR5 ter3
 雨浞入來	hou4 cak8 jip8 lai2
 雨浞入來	hou4 cah8 jip8 lai2
 密箍	bit8 khou1
@@ -128300,10 +128396,10 @@ k	khek7{S非廣韻字}	1
 蒟蒻	ku5 jiak8
 蒟蒻	ku5 jiok8
 奇怪	ki2 ka3
-寧波	Ling2 Po1
-寧波	Ling2 Pho1
-寧波	Ning2 Po1
-寧波	Ning2 Pho1
+寧波	ling2 po1
+寧波	ling2 pho1
+寧波	ning2 po1
+寧波	ning2 pho1
 厝頭雀仔	cu5 thau2 cennh7 ann3
 孔雀	khong3 ciak7
 孔雀	khong3 ciok7
@@ -128611,8 +128707,8 @@ k	khek7{S非廣韻字}	1
 蜀千	cit8 ching1
 蜀千蜀百	cit8 ching1 cit8 pah7
 蜀千蜀百	cit8 ching1 cit8 paeh7
-蜀日	cit jit
-蜀日	cit lit
+蜀日	cit jit8
+蜀日	cit lit8
 蜀身	cit8 sin1
 蜀時	cit8 si2
 蜀世人	cit8 si5 lang2
@@ -128701,8 +128797,8 @@ k	khek7{S非廣韻字}	1
 獨千	cit8 ching1
 獨千獨百	cit8 ching1 cit8 pah7
 獨千獨百	cit8 ching1 cit8 paeh7
-獨日	cit jit
-獨日	cit lit
+獨日	cit jit8
+獨日	cit lit8
 獨身	cit8 sin1
 獨時	cit8 si2
 獨世人	cit8 si5 lang2
@@ -128791,8 +128887,8 @@ k	khek7{S非廣韻字}	1
 一千	cik8 ching1
 一千一百	cik8 ching1 cik8 pah7
 一千一百	cik8 ching1 cik8 paeh7
-一日	cik jit
-一日	cik lit
+一日	cik jit8
+一日	cik lit8
 一身	cik8 sin1
 一時	cik8 si2
 一世人	cik8 si5 lang2
@@ -128881,8 +128977,8 @@ k	khek7{S非廣韻字}	1
 蜀千	cik8 ching1
 蜀千蜀百	cik8 ching1 cik8 pah7
 蜀千蜀百	cik8 ching1 cik8 paeh7
-蜀日	cik jit
-蜀日	cik lit
+蜀日	cik jit8
+蜀日	cik lit8
 蜀身	cik8 sin1
 蜀時	cik8 si2
 蜀世人	cik8 si5 lang2
@@ -128971,8 +129067,8 @@ k	khek7{S非廣韻字}	1
 獨千	cik8 ching1
 獨千獨百	cik8 ching1 cik8 pah7
 獨千獨百	cik8 ching1 cik8 paeh7
-獨日	cik jit
-獨日	cik lit
+獨日	cik jit8
+獨日	cik lit8
 獨身	cik8 sin1
 獨時	cik8 si2
 獨世人	cik8 si5 lang2
@@ -129504,42 +129600,42 @@ k	khek7{S非廣韻字}	1
 毋免	m5 bian3
 毋免想	m5 bian3 siunn4
 毋免想	m6 bian3 sionn6
-毋認數	m5 lin5 siau5
-毋認數	m6 jin6 siau5
-毋若	m5 na5
-毋煞	m5 suah7
-毋上	m5 ciunn4
-毋上	m6 cionn6
-毋使	m6 sai3
-毋是空	m5 si4 khang1
+毋認數	irm5 lin5 siau5
+毋認數	irm6 jin6 siau5
+毋若	irm5 na5
+毋煞	irm5 suah7
+毋上	irm5 ciunn4
+毋上	irm6 cionn6
+毋使	irm6 sai3
+毋是空	irm5 si4 khang1
 毋通	bang1
 毋通	irm5 thang1
 毋通	irm6 hang1
 毋通	irm6 bang1
-毋畏	m5 ui5
-毋無	m5 bo2
-毋則	m5 ciah7
-毋知	m5 cai1
-毋知人	m5 cai1 lang2
-毋知死	m5 cai1 si3
-毋值得	m6 tat8 tit7
-毋值著	m6 tat8 tioh8
-毋止	m5 ci3
-毋挃	m5 tih8
-毋挃	m6 tinnh8
-毋挃	m6 tinn2
-毋拄好	m5 tu3 ho3
-毋著	m5 tioh8
-毋著勢	m5 tioh8 se5
-毋著勢	m6 tioh8 si5
-是毋是	si4 m5 si4
-要毋	beh7 m
-要毋	bErh7 m
-要毋	bueh7 m
-要准毋	beh7 cun3 m6
-坐毋著	ce6 m6 tioh8
-坐毋著	cer4 m5 tioh8
-坐毋著	che6 m6 tioh8
+毋畏	irm5 ui5
+毋無	irm5 bo2
+毋則	irm5 ciah7
+毋知	irm5 cai1
+毋知人	irm5 cai1 lang2
+毋知死	irm5 cai1 si3
+毋值得	irm6 tat8 tit7
+毋值著	irm6 tat8 tioh8
+毋止	irm5 ci3
+毋挃	irm5 tih8
+毋挃	irm6 tinnh8
+毋挃	irm6 tinn2
+毋拄好	irm5 tu3 ho3
+毋著	irm5 tioh8
+毋著勢	irm5 tioh8 se5
+毋著勢	irm6 tioh8 si5
+是毋是	si4 irm6 si4
+要毋	beh7 irm6
+要毋	bErh7 irm6
+要毋	bueh7 irm6
+要准毋	beh7 cun3 irm6
+坐毋著	ce6 irm6 tioh8
+坐毋著	cer4 irm5 tioh8
+坐毋著	che6 irm6 tioh8
 毋認數	m5 ling5 siau5
 毋認數	m6 jing6 siau5
 筆直	pit7 tik8
@@ -129800,8 +129896,8 @@ k	khek7{S非廣韻字}	1
 涴奤	ou5 phok7
 吳語	Gou2 gIR3
 儂仔	lang2 a3
-羅珍	La2 Tin1
-羅珍	Lo2 Tin1
+羅珍	la2 tin1
+羅珍	lo2 tin1
 暖鍋	nIRng3 er1
 暖鍋	nIRng4 er1
 煖鍋	nIRng3 er1

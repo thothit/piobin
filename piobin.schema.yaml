@@ -8,10 +8,10 @@
 #    3. 臺羅ee用ae表示，聲調標在a上。輸入法中依然可以用ee；
 #    4. 臺羅韻化輔音（聲化韻）ng/m用irng和irm表示，聲調標在i上。輸入法中依然可以用ng/m；
 #    5. 聲調的數字式表示與漢語族内其他語言的方案一致，陰奇陽偶，比如1陰平2陽平；
-#    6. 第8調陽入取消臺羅所用的竪綫符，用和陽平一致的揚抑符代替；
-#    7. 第9調建議標本調。需要突出調值不同時，仍允許用臺羅的雙尖音符。輸入法中無對應；
-#    8. 參考越南語，由於詞界模糊難以分別，故以空格代替連字符。字母大小寫規則與英語相同，專有名詞每個音節的首字母都需要大寫，例如美國Bí Kok。標點符號也與英語相同。
-#    聲調標注方法：總是標在第一個非介的字符上。
+#    6. 陽入（臺羅第8調）取消臺羅所用的竪綫符，用和陽平一致的揚抑符代替；
+#    7. 輕聲（臺羅第0調）用上鉤符，合音/連音（臺羅第9調）用分音符；
+#    8. 參考越南語，由於詞界模糊難以分別，故以空格代替連字符；
+#    9. 聲調標注方法：總是標在第一個非介的字符上。
 
 schema:
   schema_id: piobin
@@ -50,6 +50,7 @@ switches:
     states: [ 通用, 增廣 ]
     reset: 0
 
+#鍵盤佈局，不喜歡的可以自行修改或刪去。
 style:
   display_tray_icon: true
 #  font_face: Microsoft YaHei
@@ -74,7 +75,7 @@ style:
     round_corner: 4 #窗口圓角。原為8
 
 menu:
-#選單每䈎顯示個數。
+#選單每䈎顯示個數。需要一併調整max_entries和spelling_hints。
   page_size: 8
 
 engine:
@@ -189,13 +190,14 @@ speller:
   auto_select: true
   delimiter: " '"
   alphabet: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~[/\\]90-;"
+#不把數字按鍵全部排除而保留90的原因是，移動設備（如手機）的虛擬鍵盤靠識別以上alphabet來決定默認鍵盤佈局，用到數字的話會自動使用含數字的36鍵佈局。
   algebra:
 #以下請盡可能精簡。很遺憾，親測RIME的窮舉預編譯方式會根據轉寫量的多少，極大地影響部署的速度。（可對比build文件夾裏prism文件的體積。）
 #目前實測部署速度：在Windows小狼毫上4min左右，在Android同文上需要20min……
 #順序皆經過精心調整，若更改很可能出現意想不到的問題。調整需謹慎，請提前寫好步驟清晰的debug方案。
 #另外經過實測，並非所有正則表達式語句都獲得支持，例如選擇|、類[]、^$等，因爲這些你在正常使用輸入法時幾乎不會去“鍵入”！務必注意徹底測試。
 #只輸入聲母的快速雙拼出詞。經測試，漢字方案裏pp, gg, gp等組合出不來，不好用。
-#    - "abbrev/^([bcghjklmnpst]h?).+$/$1/"
+#    - "abbrev/^([BCGHJKLMNPSTbcghjklmnpst]h?).+$/$1/"
 #美式鍵盤輸入效率最大化，儘量用一個鍵。
     - "derive/^c/ts/"
     - "derive/^ts/c/"
@@ -208,10 +210,11 @@ speller:
     - "derive/[Aa]e/ee/"
     - "derive/[Ee]e/ae/"
 #臺羅聲化韻新表示方法。
-    - "derive/^([BCGHJKLMNPSTbcghjklmnpst]*)(ng|m)(h?)([1-8fyqvxw])?(\\{.*\\})?$/$1ir$2$3$4/"
+    - "derive/^([BCGHJKLMNPSTbcghjklmnpst]*)(ng|m)(h?)([0-9zfyqvxwd])?(\\{.*\\})?$/$1ir$2$3$4/"
     - "derive/([BCGHJKLMNPSTbcghjklmnpst]*)ir(ng|m)(h?)/$1$2$3/"
 #用廢棄字母轉寫聲調。總是位於最上。爲保持錄入詞庫材料時的格式多樣性和自由度，不採用xlit或xform等強制轉換。
 #    - "xlit/12345678/fyqvxwfy/" #轉寫上有問題
+    - "derive/0/z/"
     - "derive/1/f/"
     - "derive/2/y/"
     - "derive/3/q/"
@@ -220,21 +223,16 @@ speller:
     - "derive/[46]/w/" #漳系。
     - "derive/7/f/"
     - "derive/8/y/"
+    - "derive/9/d/"
 #允許省略音節尾的鼻化或喉塞符號，無需鍵入聲調，但保留顯示音韻學信息。需要置於廢棄字母標調之後。
 #注意：要雙斜杆注釋！（不信可以看部署時Temp文件夾內的error log）
 #目前已實現“鍵入不帶調拼音，檢到帶調詞組”，但是相反方向，“鍵入帶調拼音，檢到不帶調詞組”未能實現。
-    - "derive/^([A-Za-z]+)(nn|h)?([1-8fyqvxw])?(\\{.*\\})?$/$1/"
+    - "derive/^([A-Za-z]+)(nn|h)?([0-9zfyqvxwd])?(\\{.*\\})?$/$1/"
 #鍵入聲調時，位置可以在元音旁，也可以在音節末尾。本語句需要位於刪去聲調語句和臺羅聲化韻ng/m改寫之後。
-    - "derive/^([BCGHJKLMNPSTbcghjklmnpst]*)([Ii][Rr]?|[Uu]|[Ee][Rr])?([AEIOUaeiou])([A-Za-z]*)([1-8fyqvxw])(\\{.*\\})?$/$1$2$3$5$4/"
-    - "derive/^([BCGHJKLMNPSTbcghjklmnpst]*)([Ii][Rr]?|[Uu]|[Ee][Rr])?([AEIOUaeiou])([1-8fyqvxw])([A-Za-z]*)(\\{.*\\})?$/$1$2$3$5$4/"
-#泥來。部分地區l讀如d。
-    - "derive/^l/d/"
+    - "derive/^([BCGHJKLMNPSTbcghjklmnpst]*)([Ii][Rr]?|[Uu]|[Ee][Rr])?([AEIOUaeiou])([A-Za-z]*)([0-9zfyqvxwd])(\\{.*\\})?$/$1$2$3$5$4/"
+    - "derive/^([BCGHJKLMNPSTbcghjklmnpst]*)([Ii][Rr]?|[Uu]|[Ee][Rr])?([AEIOUaeiou])([0-9zfyqvxwd])([A-Za-z]*)(\\{.*\\})?$/$1$2$3$5$4/"
+#泥來。
     - "derive/^l/r/"
-#日母的其他處理。
-    - "derive/^dz/j/"
-    - "derive/^z/j/"
-    - "derive/^j/dz/"
-    - "derive/^j/z/"
 #以下是對閩南不同地區的單向轉寫。
 #泉。
     - "derive/uih/ueh/"
@@ -255,7 +253,7 @@ speller:
     - "derive/aI/ui/"
     - "derive/aI/ai/"
     - "derive/^mue/mui/"
-    - "derive/ern([1-8fyqvxw])?(\\{.*\\})?/un$1/"
+    - "derive/ern([0-9zfyqvxwd])?(\\{.*\\})?/un$1/"
     - "derive/ern/irn/"
     - "derive/IR/ir/"
     - "derive/ik/iak/"
@@ -298,5 +296,5 @@ speller:
 #漳南。
     - "derive/i(ng|k)/e$1/"
     - "derive/i(ng|k)/io$1/"
-    - "derive/^([^eur]*)e([1-8fyqvxw])?(\\{.*\\})?$/$1ei$2/"
-    - "derive/^([^eur]*)e([1-8fyqvxw])?(\\{.*\\})?$/$1iei$2/"
+    - "derive/^([^eur]*)e([0-9zfyqvxwd])?(\\{.*\\})?$/$1ei$2/"
+    - "derive/^([^eur]*)e([0-9zfyqvxwd])?(\\{.*\\})?$/$1iei$2/"
