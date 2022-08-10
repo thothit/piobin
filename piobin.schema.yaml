@@ -46,11 +46,42 @@ switches:
   - name: simplification
     states: [ 繁體, 简化 ]
     reset: 0
-  - name: extended_charset
-    states: [ 通用, 增廣 ]
-    reset: 0
+#  - name: extended_charset
+#    states: [ 通用, 增廣 ]
+#    reset: 0
 
-#鍵盤佈局，不喜歡的可以自行修改或刪去。
+#Android TRIME用開關
+
+#親測無效
+#  - options: [ _key_Comment_switch ]
+#    states: [ 註, 略 ]
+
+#使用layout+windows顯示候選詞時，狀態欄是保持清空的，無法按到這個鍵，因此沒有意義。
+#  - options: [ _key_DeleteCandidate ]
+#    states: [ "×" ]
+
+  - options: [ _key_` ]
+    states: [ "✝" ]
+
+  - options: [ _key_// ]
+    states: [ "☭" ]
+
+  - options: [ _key_`/ ]
+    states: [ "☯" ]
+
+  - options: [ _key_undo ]
+    states: [ "↖" ]
+
+  - options: [ _key_redo ]
+    states: [ "↗" ]
+
+  - options: [ _key_Hide ]
+    states: [ "▼" ]
+
+#親測無效
+#  - options: [ _key_Schema_switch ]
+#    states: [ "➡" ]
+
 style:
   display_tray_icon: true
 #  font_face: Microsoft YaHei
@@ -60,12 +91,19 @@ style:
   inline_preedit: false
   candidate_text_size: 20 #候選字號。原為22
   candidate_view_height: 22 #候選區高度
-  layout: #懸浮窗口設置
+#Android TRIME用風格。TRIME不支持在schema裏自定義鍵盤佈局。
+  keyboards: #用到的鍵盤一個不漏全部都要聲明
+#    - .default #自動匹配鍵盤
+    - default #TRIME預設40鍵
+    - number
+    - symbols
+  reset_ascii_mode: false #切換不同進程時，是否自動重置爲非ASCII狀態
+  layout: #懸浮窗口，需要重新選擇schema（而不是直接重新deploy）後方可生效。
     position: left_up #位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要>=Android5.0)
     min_length: 1 #最小詞長
     max_length: 10 #超過字數則換行
-    sticky_lines: 8 #固頂行數
-    max_entries: 8 #最大詞條數
+    sticky_lines: 8 #固頂行數（不與其他候選同排，單獨一行選項的候選詞個數）
+    max_entries: 8 #允許進入懸浮窗的最大詞條數
     border: 1 #邊框寬度。原為2
     max_width: 300 #最大寬度，超過則自動換行。原為230
     max_height: 360 #最大高度。原為400
@@ -73,6 +111,15 @@ style:
     margin_y: 2 #豎直邊距。原為5
     line_spacing_multiplier: 1 #候选詞的行間距(倍數)。原為1.2
     round_corner: 4 #窗口圓角。原為8
+    movable: true #是否可移動窗口，或僅允許移動一次 true|false|once
+  window: #懸浮窗口組件，需要重新選擇schema（而不是直接重新deploy）後方可生效。
+    - {start: "", move: '❉', end: " "} #視窗移動圖示。當movable設為可移動時，拖動這個圖示即可調整懸浮窗的位置。move可改為任意符號，start end為左右修飾符號，若不需要修飾可簡化為{move: 'ㄓ '}。
+    - {start: "", click: "Left", label: "←", align: center, end: " "} #align對齊方式，left左對齊|right右對齊|center居中，默認為左對齊可省略不寫（align每行元件只需寫一個，也可用於上面的編碼與候選）
+    - {start: "", click: "Right", label: "→", end: " "} #end: " "的作用是在按鍵間形成間隙
+    - {start: "", click: "Up", label: "↑", end: " "} #end: " "的作用是在按鍵間形成間隙
+    - {start: "", click: "Down", label: "↓", end: ""}
+    - {start: "\n", composition: "%s", end: "", letter_spacing: 0}
+    - {start: "\n", label: "%s.", candidate: "%s", comment: " %s", end: "", sep: " "}
 
 menu:
 #選單每䈎顯示個數。需要一併調整max_entries和spelling_hints。
@@ -190,7 +237,7 @@ speller:
   auto_select: true
   delimiter: " '"
   alphabet: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~[/\\]90-;"
-#不把數字按鍵全部排除而保留90的原因是，移動設備（如手機）的虛擬鍵盤靠識別以上alphabet來決定默認鍵盤佈局，用到數字的話會自動使用含數字的36鍵佈局。
+#不把數字按鍵全部排除而保留90的原因是：移動設備（如手機）的虛擬鍵盤靠識別以上alphabet來決定默認鍵盤佈局，用到數字的話會自動使用含數字的36鍵或40鍵佈局。
   algebra:
 #以下請盡可能精簡。很遺憾，親測RIME的窮舉預編譯方式會根據轉寫量的多少，極大地影響部署的速度。（可對比build文件夾裏prism文件的體積。）
 #目前實測部署速度：在Windows小狼毫上4min左右，在Android同文上需要20min……
