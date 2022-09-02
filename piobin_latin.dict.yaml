@@ -56,14 +56,13 @@
 #
 ---
 name: piobin_latin
-version: "2020.09.14"
+version: "2022.08.09"
 sort: by_weight
 use_preset_vocabulary: false
 #下面的是本词库包含的所有词库，请根据需要开启/禁用，词条前添删#号即可开启/关闭词库，於重新部署後生效。
 #雙拼不支持 luna_pinyin.cn_en 詞庫，請用戶手動禁用。
 import_tables:
 #  - piobin.kai  #由日常討論積累下來的對時音的各類修正，有單字亦有詞組。
-
 ...
 #這個三點省略號是分割stream的標誌，不可省略！
 ### 語音常識
@@ -53071,3 +53070,95 @@ cuè ciò 	cue5 ciO5{做醮}
 cò khiò 	co5 khiO5{做竅}
 cuè khiò 	cue5 khiO5{做竅}
 thiu liò 	thiu1 liO5{抽軂}
+siôk giān 	siok8 gian6{俗諺}
+ōu nīrng 	ou6 nirng6{芋卵}
+ōu nīrng kánn 	ou6 nirng6 kann3{芋卵囝}
+ōu nīrng kérnn 	ou6 nirng6 kernn3{芋卵囝}
+uō lōng 	uo6 long6{芋卵}
+ciat lâm 	ciat7 lam2{浙南}
+cit lâm 	cit7 lam2{浙南}
+bân tang 	ban2 tang1{閩東}
+tuē lí 	tue6 li3{地理}
+tē lí 	te6 li3{地理}
+tī lí 	ti6 li3{地理}
+tik tok 	tik7 tok7{滴篤}
+tik tok 	tik7 tok7{德督}
+tik tôk 	tik7 tok8{滴毒}
+tik tôk 	tik7 tok8{特毒}
+tik tok nih 	tik7 tok7 nih7{滴篤睰}
+tik tok nih 	tik7 tok7 nih7{德督睰}
+tik tôk nih 	tik7 tok8 nih7{滴毒睰}
+tik tôk nih 	tik7 tok8 nih7{特毒睰}
+tik tok nih 	tik7 tok7 nih7{滴篤𥍉}
+tik tok nih 	tik7 tok7 nih7{德督𥍉}
+tik tôk nih 	tik7 tok8 nih7{滴毒𥍉}
+tik tôk nih 	tik7 tok8 nih7{特毒𥍉}
+lǎi piah 	lai4 piah7{內壁}
+cuí ke 	cui3 ke1{水雞}
+cuí kue 	cui3 kue1{水雞}
+cuí ke siû 	cui3 ke1 siu2{水雞泅}
+cuí kue siû 	cui3 kue1 siu2{水雞泅}
+kah juā 	kah7 jua6{遘偌}
+kà juā 	ka5 jua6{遘偌}
+ke juǎ 	ke1 jua4{加偌}
+kae juā 	kae1 jua6{加偌}
+kah juā 	kah7 jua6{甲偌}
+khà juǎ 	kha5 jua4{較偌}
+juǎ cuè 	jua4 cue5{偌多}
+juā cē 	jua6 ce6{偌多}
+juǎ cuè gê 	jua4 cue5 ge2{偌多個}
+juā cē ê 	jua6 ce6 e2{偌多個}
+juā cuē ê 	jua6 cue6 e2{偌多個}
+juǎ kú 	jua4 ku3{偌久}
+juā nî ánn 	jua6 ni2 ann3{偌尼仔}
+juā á lí 	jua6 a3 li3{偌仔哩}
+bô juǎ 	bo2 jua4{無偌}
+bô juǎ kú 	bo2 jua4 ku3{無偌久}
+juǎ cuè 	jua4 cue5{偌濟}
+juā cē 	jua6 ce6{偌濟}
+juǎ cuè gê 	jua4 cue5 ge2{偌濟個}
+juā cē ê 	jua6 ce6 e2{偌濟個}
+juā cuē ê 	jua6 cue6 e2{偌濟個}
+cha bô guǎ 	cha1 bo2 gua4{差無偌}
+kah guā 	kah7 gua6{遘偌}
+kà guā 	ka5 gua6{遘偌}
+ke guǎ 	ke1 gua4{加偌}
+kae guā 	kae1 gua6{加偌}
+kah guā 	kah7 gua6{甲偌}
+khà guǎ 	kha5 gua4{較偌}
+guǎ cuè 	gua4 cue5{偌多}
+guā cē 	gua6 ce6{偌多}
+guǎ cuè gê 	gua4 cue5 ge2{偌多個}
+guā cē ê 	gua6 ce6 e2{偌多個}
+guā cuē ê 	gua6 cue6 e2{偌多個}
+guǎ kú 	gua4 ku3{偌久}
+guā nî ánn 	gua6 ni2 ann3{偌尼仔}
+guā á lí 	gua6 a3 li3{偌仔哩}
+bô guǎ 	bo2 gua4{無偌}
+bô guǎ kú 	bo2 gua4 ku3{無偌久}
+guǎ cuè 	gua4 cue5{偌濟}
+guā cē 	gua6 ce6{偌濟}
+guǎ cuè gê 	gua4 cue5 ge2{偌濟個}
+guā cē ê 	gua6 ce6 e2{偌濟個}
+guā cuē ê 	gua6 cue6 e2{偌濟個}
+juǎ cînn 	jua4 cinn2{偌錢}
+juǎ cuē cînn 	jua4 cue6 cinn2{偌濟錢}
+juā cē cînn 	jua4 cue6 cinn2{偌濟錢}
+juā cînn 	jua6 cinn2{偌錢}
+juā cuē cînn 	jua6 cue6 cinn2{偌濟錢}
+juā cē cînn 	jua6 cue6 cinn2{偌濟錢}
+juā cînn 	jua6 cinn2{偌錢}
+juā cuē cînn 	jua6 cue6 cinn2{偌濟錢}
+juā cē cînn 	jua6 cue6 cinn2{偌濟錢}
+luǎ cînn 	lua4 cinn2{偌錢}
+luǎ cuē cînn 	lua4 cue6 cinn2{偌濟錢}
+luā cē cînn 	lua4 cue6 cinn2{偌濟錢}
+luā cînn 	lua6 cinn2{偌錢}
+luā cuē cînn 	lua6 cue6 cinn2{偌濟錢}
+luā cē cînn 	lua6 cue6 cinn2{偌濟錢}
+luā cînn 	lua6 cinn2{偌錢}
+luā cuē cînn 	lua6 cue6 cinn2{偌濟錢}
+luā cē cînn 	lua6 cue6 cinn2{偌濟錢}
+guā cînn 	gua6 cinn2{偌錢}
+guā cuē cînn 	gua6 cue6 cinn2{偌濟錢}
+guā cē cînn 	gua6 cue6 cinn2{偌濟錢}

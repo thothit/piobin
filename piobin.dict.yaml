@@ -2,23 +2,28 @@
 # encoding: utf-8
 #
 # 閩語時音 專門詞庫集合
+#
 # ThokCc <potato008@gmail.com>
 # 神奇海螺
 # 阿托 <a-thok@outlook.com>
 # 騰達 <dieghv@126.com>
 # 大黑 <only3km@gmail.com>
+#
 # 日常討論鳴謝：
 # 月絕書
 # 閩南語正字會
 # 標準吳語
 # 海墘閩語
 # 嶺南粵音
+#
 # 通過搜索「###」來到達詞典頭部。
 # ### 語音常識
-# ### 單字音(末尾標調)
+# ### 單字音（末尾標調）
 # ### 詞庫（阿托無聲調Temp）
 # ### 詞庫（完整帶聲調版）
+#
 # 費神下底所列:
+#
 # * 百度 閩南語吧 (著重感謝lyf6499佮星期绿)
 #   http://tieba.baidu.com/f?kw=%C3%F6%C4%CF%D3%EF
 # * 林建輝 Lim Kianhui
@@ -42,14 +47,13 @@
 # * Dictionary of the Foochow Dialect, 3rd Edition, 1929
 ---
 name: piobin
-version: "2022.08.05"
+version: "2022.08.09"
 sort: by_weight
 use_preset_vocabulary: false
 #下面的是本词库包含的所有词库，请根据需要开启/禁用，词条前添删#号即可开启/关闭词库，於重新部署後生效。
 #雙拼不支持 luna_pinyin.cn_en 詞庫，請用戶手動禁用。
 import_tables:
 #  - piobin.kai  #由日常討論積累下來的對時音的各類修正，有單字亦有詞組。
-
 ...
 #這個三點省略號是分割stream的標誌，不可省略！
 ### 語音常識
@@ -545,8 +549,9 @@ ou	Ou7{[ou]/[ɔ]陰入}	1000
 ü	U9{[u]合連}	1000
 Öu	Ou9{[ou]/[ɔ]合連}	1000
 öu	Ou9{[ou]/[ɔ]合連}	1000
+
 #以下單字音皆采用廣韻注釋。數字調羅馬字。S為標準音(Stantard)，H為慣音(Habitual)。
-### 單字音(末尾標調)
+### 單字音（末尾標調）
 娿	o1{S影果一開歌平}	
 痾	o1{S影果一開歌平}	1
 䋪	o1{S影果一開歌平}	
@@ -130021,3 +130026,95 @@ k	khek7{S非廣韻字}	1
 做竅	co5 khiO5
 做竅	cue5 khiO5
 抽軂	thiu1 liO5
+俗諺	siok8 gian6
+芋卵	ou6 nirng6
+芋卵囝	ou6 nirng6 kann3
+芋卵囝	ou6 nirng6 kernn3
+芋卵	uo6 long6
+浙南	ciat7 lam2
+浙南	cit7 lam2
+閩東	ban2 tang1
+地理	tue6 li3
+地理	te6 li3
+地理	ti6 li3
+滴篤	tik7 tok7
+德督	tik7 tok7
+滴毒	tik7 tok8
+特毒	tik7 tok8
+滴篤睰	tik7 tok7 nih7
+德督睰	tik7 tok7 nih7
+滴毒睰	tik7 tok8 nih7
+特毒睰	tik7 tok8 nih7
+滴篤𥍉	tik7 tok7 nih7
+德督𥍉	tik7 tok7 nih7
+滴毒𥍉	tik7 tok8 nih7
+特毒𥍉	tik7 tok8 nih7
+內壁	lai4 piah7
+水雞	cui3 ke1
+水雞	cui3 kue1
+水雞泅	cui3 ke1 siu2
+水雞泅	cui3 kue1 siu2
+遘偌	kah7 jua6
+遘偌	ka5 jua6
+加偌	ke1 jua4
+加偌	kae1 jua6
+甲偌	kah7 jua6
+較偌	kha5 jua4
+偌多	jua4 cue5
+偌多	jua6 ce6
+偌多個	jua4 cue5 ge2
+偌多個	jua6 ce6 e2
+偌多個	jua6 cue6 e2
+偌久	jua4 ku3
+偌尼仔	jua6 ni2 ann3
+偌仔哩	jua6 a3 li3
+無偌	bo2 jua4
+無偌久	bo2 jua4 ku3
+偌濟	jua4 cue5
+偌濟	jua6 ce6
+偌濟個	jua4 cue5 ge2
+偌濟個	jua6 ce6 e2
+偌濟個	jua6 cue6 e2
+差無偌	cha1 bo2 gua4
+遘偌	kah7 gua6
+遘偌	ka5 gua6
+加偌	ke1 gua4
+加偌	kae1 gua6
+甲偌	kah7 gua6
+較偌	kha5 gua4
+偌多	gua4 cue5
+偌多	gua6 ce6
+偌多個	gua4 cue5 ge2
+偌多個	gua6 ce6 e2
+偌多個	gua6 cue6 e2
+偌久	gua4 ku3
+偌尼仔	gua6 ni2 ann3
+偌仔哩	gua6 a3 li3
+無偌	bo2 gua4
+無偌久	bo2 gua4 ku3
+偌濟	gua4 cue5
+偌濟	gua6 ce6
+偌濟個	gua4 cue5 ge2
+偌濟個	gua6 ce6 e2
+偌濟個	gua6 cue6 e2
+偌錢	jua4 cinn2
+偌濟錢	jua4 cue6 cinn2
+偌濟錢	jua4 cue6 cinn2
+偌錢	jua6 cinn2
+偌濟錢	jua6 cue6 cinn2
+偌濟錢	jua6 cue6 cinn2
+偌錢	jua6 cinn2
+偌濟錢	jua6 cue6 cinn2
+偌濟錢	jua6 cue6 cinn2
+偌錢	lua4 cinn2
+偌濟錢	lua4 cue6 cinn2
+偌濟錢	lua4 cue6 cinn2
+偌錢	lua6 cinn2
+偌濟錢	lua6 cue6 cinn2
+偌濟錢	lua6 cue6 cinn2
+偌錢	lua6 cinn2
+偌濟錢	lua6 cue6 cinn2
+偌濟錢	lua6 cue6 cinn2
+偌錢	gua6 cinn2
+偌濟錢	gua6 cue6 cinn2
+偌濟錢	gua6 cue6 cinn2
